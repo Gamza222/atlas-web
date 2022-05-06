@@ -1,0 +1,62 @@
+@import '../../assets/mixins';
+
+.fundamentally {
+    @include container;
+
+    &__container {
+        background: $container-color;
+        border-radius: $container-border;
+        box-shadow: $container-shadow;
+        margin-top: var(--container-margin-top);
+        display: flex;
+        justify-content: space-between;
+        padding: 75px 206px 69px 85px;
+        align-items: center;
+
+        @media screen and (max-width: 1700px) {
+            padding: 75px 116px 69px 72px;
+        }
+
+        @media screen and (max-width: 1100px) {
+            flex-direction: column-reverse;
+        }
+
+        @media screen and (max-width: 1100px) {
+            padding: 2rem;
+        }
+        @media screen and (max-width: 700px) {
+            padding: 1.3rem;
+        }
+
+        > p {
+            font-size: var(--big-font-size-variant);
+            letter-spacing: 0px;
+            text-align: justify;
+            width: 770px;
+
+            @media screen and (max-width: 1700px) {
+                width: auto;
+                margin-right: 200px;
+            }
+            @media screen and (max-width: 1350px) {
+                width: auto;
+                margin-right: 120px;
+            }
+
+            @media screen and (max-width: 1100px) {
+                margin: 0;
+                text-align: center;
+                margin-top: 4rem;
+            }
+            @media screen and (max-width: 700px) {
+                margin: 0;
+                text-align: center;
+                margin-top: 2rem;
+            }
+        }
+
+        > img {
+            max-width: 100%;
+        }
+    }
+}

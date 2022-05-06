@@ -1,0 +1,134 @@
+@import '../../assets/mixins';
+
+:root {
+    --normal-font-size: 32px;
+    --big-font-size: 50px;
+    --big-font-size-variant: 45px;
+    --super-big-font-size: 95px;
+    --button-main-font-size: 40px;
+    --container-margin-top: 27px;
+}
+
+body {
+    font-family: $main-font-variant;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: none;
+    letter-spacing: 2px;
+}
+
+a {
+    font-family: $main-font-variant;
+    font-weight: 800;
+    color: $color-primary;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font-size: var(--normal-font-size);
+    white-space: nowrap;
+    padding: 10px 45px;
+    background-color: $color-primary;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+    &:hover {
+        background-color: transparent;
+        border-color: $color-primary;
+        a {
+            color: $color-primary;
+        }
+    }
+
+    a {
+        color: $color-white;
+    }
+}
+
+.text {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--big-font-size);
+    line-height: 59px;
+    color: $color-primary;
+    letter-spacing: 1px;
+
+    @media screen and (max-width: 1500px) {
+        line-height: 40px;
+    }
+    @media screen and (max-width: 1000px) {
+        line-height: 35px;
+    }
+    @media screen and (max-width: 700px) {
+        line-height: 30px;
+        font-weight: 500;
+    }
+}
+
+
+@media screen and (max-width: 1700px) {
+    :root {
+        --normal-font-size: 30px;
+        --big-font-size: 40px;
+        --big-font-size-variant: 35px;
+        --super-big-font-size: 80px;
+        --button-main-font-size: 35px;
+    }
+}
+@media screen and (max-width: 1600px) {
+    :root {
+        --normal-font-size: 26px;
+        --big-font-size: 38px;
+        --super-big-font-size: 70px;
+        --button-main-font-size: 32px;
+    }
+}
+@media screen and (max-width: 1500px) {
+    :root {
+        --normal-font-size: 24px;
+        --big-font-size: 30px;
+        --big-font-size-variant: 28px;
+        --super-big-font-size: 64px;
+        --button-main-font-size: 26px;
+    }
+}
+@media screen and (max-width: 1300px) {
+    :root {
+        --normal-font-size: 21px;
+        --big-font-size: 28px;
+        --big-font-size-variant: 27px;
+        --super-big-font-size: 58px;
+        --button-main-font-size: 24px;
+    }
+}
+@media screen and (max-width: 1100px) {
+    :root {
+        --normal-font-size: 21px;
+        --big-font-size: 28px;
+        --big-font-size-variant: 27px;
+        --super-big-font-size: 48px;
+        --button-main-font-size: 24px;
+    }
+}
+@media screen and (max-width: 700px) {
+    :root {
+        --normal-font-size: 21px;
+        --big-font-size: 20px;
+        --big-font-size-variant: 19px;
+        --super-big-font-size: 48px;
+        --button-main-font-size: 19px;
+    }
+}

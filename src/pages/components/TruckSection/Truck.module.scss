@@ -1,0 +1,49 @@
+@import '../../assets/mixins';
+
+.truck {
+    @include container;
+    margin-top: var(--container-margin-top);
+
+    &__container {
+        width: 100%;
+        position: relative;
+
+        @media screen and (max-width: 1100px) {
+            background: $container-color;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            padding: 40px 20px;
+            border-radius: 30px;
+        }
+
+        > div {
+            width: 100%;
+
+            > img {
+                width: 100%;
+                border-radius: $container-border;
+
+                @media screen and (max-width: 1100px) {
+                    border-radius: 20px;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+        > p {
+            position: absolute;
+            top: 67px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            width: 70%;
+
+            @media screen and (max-width: 1100px) {
+                width: 90%;
+            }
+            @media screen and (max-width: 1100px) {
+                position: static;
+                transform: none;
+                width: 100%;
+            }
+        }
+    }
+}
