@@ -2,6 +2,7 @@
 
 .about {
     @include container;
+    margin-bottom: 4rem;
 
     &__container {
         background-color: $container-color;

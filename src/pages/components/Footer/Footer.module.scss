@@ -1,0 +1,252 @@
+@import '../../assets/mixins';
+
+.footer {
+    left: 0;
+    @include container;
+    background-color: $color-primary;
+    padding: 73px 94px 59px 30px;
+
+    @media screen and (max-width: 1800px) {
+        padding: 3rem 2.5rem;
+    }
+    @media screen and (max-width: 720px) {
+        padding: 2rem 1.5rem;
+    }
+
+
+    &__container {
+        display: flex;
+        align-items: end;
+
+        @media screen and (max-width: 1800px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media screen and (max-width: 720px) {
+            grid-template-columns: 1fr;
+            justify-items: center;
+            align-items: center;
+        }
+
+        &__logo {
+            display: flex;
+            align-items: center;
+            margin-right: 150px;
+            height: 100%;
+
+            @media screen and (max-width: 1800px) {
+                grid-row: 2;
+                margin: 0;
+            }
+
+            @media screen and (max-width: 720px) {
+                justify-self: auto;
+                text-align: center;
+                margin-bottom: 1.3rem;
+            }
+
+            > img {
+                margin-top: -60px;
+
+                @media screen and (max-width: 720px) {
+                    display: none;
+                }
+            }
+
+            > div {
+                margin-left: 24px;
+
+                @media screen and (max-width: 720px) {
+                    margin-left: 4px;
+                }
+                > h2 {
+                    font-family: 'Raleway';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 60px;
+                    line-height: 70px;
+                    color: $color-white;
+
+                    @media screen and (max-width: 720px) {
+                        font-size: 30px;
+                    }
+                }
+
+                > p {
+                    color: $color-white;
+                    font-family: 'Raleway';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 28px;
+                    margin-top: 29px;
+
+                    @media screen and (max-width: 720px) {
+                        font-size: 15px;
+                        margin-top: -5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    margin-right: 164px;
+    width: 640px;
+
+    @media screen and (max-width: 1800px) {
+        margin: 0;
+        grid-column: 1/3;
+        justify-self: center;
+        margin-bottom: 5rem;
+
+        > p {
+            text-align: center;
+        }
+    }
+
+    @media screen and (max-width: 720px) {
+        grid-column: auto;
+        width: auto !important;
+        margin-bottom: 123px;
+        
+        > p {
+            white-space: unset !important;
+        }
+    }
+
+
+    > p {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 42px;
+        color: $color-white;
+        margin-bottom: 20px;
+        margin-left: 15px;
+        white-space: nowrap;
+    }
+
+
+    &__input {
+        width: 100%;
+        border-radius: 30px;
+        border: 2px solid #FFFFFF;
+        overflow: hidden;
+        height: 77px;
+
+        
+
+        &__mail {
+            height: 100%;
+            width: 75%;
+            background-color: transparent;
+            color: #fff;
+            padding: 20px;
+        }
+
+        &__submit {
+            height: 100%;
+            width: 25%;
+            background-color: $color-white;
+            color: $color-primary;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 720px) {
+            display: flex;
+            flex-direction: column;
+            gap: 1.3rem;
+            align-items: center;
+            border: none;
+            overflow: visible;
+
+            &__mail {
+                border-radius: 30px;
+                border: 2px #fff solid;
+            }
+
+            &__submit {
+                padding: 20px;
+                width: 45%;
+                border-radius: 30px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        width: 440px;
+
+        > p {
+            font-size: 25px;
+        }
+    }
+}
+
+.socialLinks {
+    display: flex;
+    gap: 1.2rem;
+    @media screen and (max-width: 1800px) {
+        grid-row: 2;
+        justify-self: end;
+    }
+
+    @media screen and (max-width: 720px) {
+        grid-row: auto;
+        justify-self: auto;
+    }
+
+> a {
+    height: 93px;
+    width: 93px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 36px;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    @media screen and (max-width: 900px) {
+        width: 50px;
+        height: 50px;
+    }
+
+    @media screen and (max-width: 720px) {
+        margin: 0;
+    }
+
+    &:hover {
+        background-color: transparent;
+        border-color: $color-white;
+
+        > svg {
+            color: $color-white;
+        }
+    }
+
+    > svg {
+        width: 100%;
+        height: 65%;
+    }
+}
+
+    > a:nth-child(1) {
+        > svg{
+            margin-left: 4px;
+
+            @media screen and (max-width: 900px) {
+                margin-left: 1px;
+            }
+        }
+    }
+
+}
