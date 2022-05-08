@@ -1,10 +1,10 @@
 @import '../../assets/mixins';
 
 .footer {
-    left: 0;
     @include container;
     background-color: $color-primary;
-    padding: 73px 94px 59px 30px;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
 
     @media screen and (max-width: 1800px) {
         padding: 3rem 2.5rem;
@@ -17,6 +17,7 @@
     &__container {
         display: flex;
         align-items: end;
+        justify-content: space-between;
 
         @media screen and (max-width: 1800px) {
             display: grid;
@@ -128,7 +129,6 @@
         line-height: 42px;
         color: $color-white;
         margin-bottom: 20px;
-        margin-left: 15px;
         white-space: nowrap;
     }
 
@@ -191,7 +191,7 @@
 
 .socialLinks {
     display: flex;
-    gap: 1.2rem;
+    gap: 2rem;
     @media screen and (max-width: 1800px) {
         grid-row: 2;
         justify-self: end;
@@ -199,6 +199,7 @@
 
     @media screen and (max-width: 720px) {
         grid-row: auto;
+        gap: 1.3rem;
         justify-self: auto;
     }
 
@@ -207,11 +208,10 @@
     width: 93px;
     border-radius: 50%;
     background-color: #fff;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 36px;
     cursor: pointer;
     transition: 0.2s ease;
 
