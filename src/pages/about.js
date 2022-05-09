@@ -11,8 +11,8 @@ export default function about() {
         <main>
             <AboutUs />
             <Story />
-            <Team />
             <WeDo />
+            <Team />   
         </main>
     </Layout>
   )

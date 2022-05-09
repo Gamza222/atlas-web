@@ -1,0 +1,102 @@
+@import '../../../assets/mixins';
+
+.weDo {
+    @include container;
+
+    &__container {
+        position: relative;
+        margin-top: var(--container-margin-top);
+        @media screen and (max-width: 1050px) {
+            background-color: $container-color-variant;
+            border-radius: $container-border;
+            box-shadow: $container-shadow;
+        }
+
+        @media screen and (max-width: 1050px) {
+            padding: 40px 20px;
+          }
+          @media screen and (max-width: 350px) {
+            padding: 35px 10px;
+          }
+
+        > img {
+            width: 100%;
+
+            @media screen and (max-width: 1350px) {
+                filter: brightness(0.4);
+            }
+
+            @media screen and (max-width: 1050px) {
+                filter: none;
+                margin-bottom: 1.6rem;
+            }
+        }
+
+        &__text {
+            position: absolute;
+            display: flex;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 80px;
+            width: 100%;
+            padding: 0 80px;
+            align-items: end;
+
+            @media screen and (max-width: 1350px) {
+                flex-direction: column-reverse;
+                align-items: start;
+                gap: 3rem;
+            }
+
+            @media screen and (max-width: 1050px) {
+                position: static;
+                transform: none;
+                text-align: center;
+                gap: 1.2rem;
+                padding: 0;
+            }
+
+            > h3 {
+                text-align: end;
+                font-size: 50px;
+                color: #fff;
+                white-space: nowrap;
+                width: 100%;
+
+                @media screen and (max-width: 1350px) {
+                    width: fit-content;
+                }
+
+                @media screen and (max-width: 1050px) {
+                    width: 100%;
+                    text-align: center;
+                    color: $color-primary;
+                    font-size: var(--h2-font-size);
+                    font-weight: 600;
+                    white-space: normal;
+                }
+            }
+
+            > div {
+                > p {
+                    white-space: nowrap;
+                    font-size: var(--normal-font-size);
+                    line-height: 32px;
+                    color: #fff;
+
+                    @media screen and (max-width: 1050px) {
+                        color: $color-primary;
+                        font-size: var(--big-font-size-variant) !important;
+                        font-weight: 500;
+                        line-height: 43px;
+                        white-space: normal;
+
+                        > br {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

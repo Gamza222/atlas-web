@@ -2,16 +2,19 @@
 
 :root {
     --normal-font-size: 32px;
-    --big-font-size: 50px;
-    --big-font-size-variant: 45px;
+    --big-font-size: 40px;
+    --big-font-size-variant: 35px;
     --super-big-font-size: 95px;
     --button-main-font-size: 40px;
     --container-margin-top: 27px;
+    --h2-font-size: 75px;
 }
 
 body {
     font-family: $main-font-variant;
     overflow-x: hidden;
+    max-width: 3200px;
+    margin: 0 auto;
 }
 
 * {
@@ -57,6 +60,17 @@ button {
     }
 }
 
+p {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 53px;
+}
+
+h2, h3, h4, h5 {
+    font-family: 'Raleway', sans-serif;
+}
+
 .text {
     font-family: 'Raleway';
     font-style: normal;
@@ -82,8 +96,8 @@ button {
 @media screen and (max-width: 1700px) {
     :root {
         --normal-font-size: 30px;
-        --big-font-size: 40px;
-        --big-font-size-variant: 35px;
+        --big-font-size: 35px;
+        --big-font-size-variant: 30px;
         --super-big-font-size: 80px;
         --button-main-font-size: 35px;
     }
@@ -112,6 +126,7 @@ button {
         --big-font-size-variant: 27px;
         --super-big-font-size: 58px;
         --button-main-font-size: 24px;
+        --h2-font-size: 45px;
     }
 }
 @media screen and (max-width: 1100px) {
@@ -123,6 +138,12 @@ button {
         --button-main-font-size: 24px;
     }
 }
+
+@media screen and (max-width: 1100px) {
+    :root {
+        --h2-font-size: 55px;
+    }
+}
 @media screen and (max-width: 700px) {
     :root {
         --normal-font-size: 21px;
@@ -130,5 +151,11 @@ button {
         --big-font-size-variant: 19px;
         --super-big-font-size: 48px;
         --button-main-font-size: 19px;
+        --h2-font-size: 40px;
+    }
+}
+@media screen and (max-width: 350px) {
+    :root {
+        --h2-font-size: 35px;
     }
 }

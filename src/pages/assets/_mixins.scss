@@ -1,18 +1,18 @@
 @import './variables';
 
 @mixin container {
-    padding: 0 350px;
+    padding: 0 360px;
 
     @media screen and (max-width: 2250px) {
-        padding: 0 250px;
+        padding: 0 290px;
     }
 
     @media screen and (max-width: 2150px) {
-        padding: 0 200px;
+        padding: 0 290px;
     }
 
     @media screen and (max-width: 2000px) {
-        padding: 0 120px;
+        padding: 0 260px;
     }
 
     @media screen and (max-width: 1600px) {
@@ -20,6 +20,10 @@
     }
 
     @media screen and (max-width: 1700px) {
-        padding: 0 1rem;
+        padding: 0 10rem;
+    }
+
+    @media screen and (max-width: 1550px) {
+        padding: 0 5rem;
     }
 }
