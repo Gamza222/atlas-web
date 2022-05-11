@@ -19,7 +19,7 @@ export default function Header() {
                     <li><Link to="/signIn">Sign In</Link></li>
                 </ul>   
             </nav>
-            <button className={classes.header__container__btn}><a href="">Request a Demo</a></button>
+            <button className={classes.header__container__btn}><Link to="/requestDemo">Request a Demo</Link></button>
             {active ? 
             <button 
             onClick={() => setActive(!active)}

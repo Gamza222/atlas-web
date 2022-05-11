@@ -1,0 +1,255 @@
+@import '../pages/assets/mixins';
+
+
+.request {
+    @include container;
+    overflow: hidden;
+    position: relative;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 7rem;
+        margin-bottom: 15rem;
+
+        > h1 {
+            z-index: 2;
+            text-align: center;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 48px;
+            line-height: 56px;
+            text-align: center;
+            letter-spacing: 0.05em;
+            color: $color-primary;
+
+            @media screen and (max-width: 1500px) {
+                font-size: 43px;
+                line-height: 36px;
+            }
+            @media screen and (max-width: 1000px) {
+                font-size: 35px;
+            }
+            @media screen and (max-width: 700px) {
+                font-size: 30px;
+            }
+        }
+
+        > p {
+            z-index: 2;
+            text-align: center;
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 35px;
+            text-align: center;
+            color: $color-primary;
+            margin-top: 1.5rem;
+
+            @media screen and (max-width: 1500px) {
+                font-size: 27px;
+                line-height: 30px;
+            }
+            @media screen and (max-width: 1000px) {
+                font-size: 25px;
+            }
+            @media screen and (max-width: 700px) {
+                font-size: 19px;
+            }
+        }
+
+        > form {
+            z-index: 2;
+            position: relative;
+            display: flex;
+            margin-top: 2rem;
+            flex-direction: column;
+            padding: 1rem 3rem 4rem;
+            box-shadow: $container-shadow;
+            border-radius: $container-border;
+            border: 1px solid #B9B9B9;
+            background: #fff;
+            width: 620px;
+            align-items: center;
+
+            @media screen and (max-width: 700px) {
+                width: 100%;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            > button {
+                margin-top: 3.8rem;
+                color: #fff;
+                width: fit-content;
+                text-align: center;
+                padding: 0.3rem 1.3rem;
+
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 800;
+                font-size: 20px;
+                line-height: 23px;
+
+                &:hover {
+                    color: $color-primary;
+                }
+
+                @media screen and (max-width: 700px) {
+                    font-size: 18px;
+                }
+                @media screen and (max-width: 350px) {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        &__item, &__itemMessage {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            > label {
+                margin-left: 0.8rem;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 28px;
+                color: $color-primary;
+                margin-bottom: 0.5rem;
+            }
+
+            > input {
+                width: 100%;
+                height: 50px;
+                background: #E5E5E5;
+                border: 1px solid #868686;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 20px;
+                color: #B9B9B9;
+                padding: 0 2rem;
+                font-size: 20px;
+                outline: none;
+            }
+        }
+
+        &__itemMessage {
+            > input {
+                height: 110px;
+            }
+        }
+    }
+}
+
+#greenCircles {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    left: 60%;
+    top: 60%;
+
+    > div {
+        border-radius: 50%;
+    }
+
+    > div:nth-child(1) {
+        width: 382px;
+        z-index: 0;
+        height: 354px;
+
+        background: rgba(20, 135, 60, 0.5);
+    }
+    > div:nth-child(2) {
+        width: 180px;
+        z-index: 2;
+        margin-left: 16rem;
+        margin-top: -25rem;
+        height: 168px;
+
+        background: rgba(92, 182, 123, 0.7);
+    }
+    > div:nth-child(3) {
+        width: 128px;
+        z-index: 3;
+        height: 119px;
+        margin-left: 1rem;
+        margin-top: 1rem;
+        margin-left: 11.5rem;
+        margin-top: -12rem;
+
+        background: rgba(149, 220, 174, 0.5);
+    }
+}
+
+#orangeCircles {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    left: 18%;
+    top: 25%;
+    @media screen and (max-width: 1700px) {
+        left: 15%;
+    }
+    @media screen and (max-width: 1550px) {
+        left: 10%;
+    }
+    @media screen and (max-width: 1450px) {
+        left: 7%;
+    }
+    @media screen and (max-width: 1380px) {
+        left: 5%;
+    }
+    @media screen and (max-width: 1300px) {
+        left: 0;
+    }
+    @media screen and (max-width: 1150px) {
+        left: -4%;
+    }
+    @media screen and (max-width: 1000px) {
+        left: -13%;
+    }
+    @media screen and (max-width: 800px) {
+        left: -33%;
+    }
+    
+
+    > div {
+        border-radius: 50%;
+    }
+
+    > div:nth-child(1) {
+        z-index: 0;
+        width: 273.25px;
+        height: 273.25px;
+        margin-left: 5rem;
+
+        background: rgba(242, 100, 25, 0.5);
+        transform: rotate(126.07deg);
+    }
+    > div:nth-child(2) {
+        width: 163.75px;
+        height: 163.75px;
+        z-index: 2;
+        margin-left: 5rem;
+        margin-top: -22rem;
+        opacity: 0.8;
+        background: #ff7e39;
+        transform: rotate(126.07deg);
+    }
+    > div:nth-child(3) {
+        width: 109.15px;
+        height: 109.15px;
+        z-index: 3;
+        margin-left: 2rem;
+        margin-top: -4rem;
+
+        background: rgba(236, 197, 40, 0.5);
+        transform: rotate(126.07deg);
+    }
+}
