@@ -1,11 +1,37 @@
 @import './variables';
 
-@mixin container {
+@mixin container-variant {
     padding: 0 360px;
 
-    @media screen and (max-width: 2250px) {
-        padding: 0 290px;
+    @media screen and (max-width: 2150px) {
+        padding: 0 180px;
     }
+
+    @media screen and (max-width: 2000px) {
+        padding: 0 180px;
+    }
+
+    @media screen and (max-width: 1600px) {
+        padding: 0 60px;
+    }
+
+    @media screen and (max-width: 1700px) {
+        padding: 0 10rem;
+    }
+
+    @media screen and (max-width: 1550px) {
+        padding: 0 5rem;
+    }
+    @media screen and (max-width: 750px) {
+        padding: 0 1rem;
+    }
+    @media screen and (max-width: 350px) {
+        padding: 0 0.4rem;
+    }
+}
+
+@mixin container {
+    padding: 0 360px;
 
     @media screen and (max-width: 2150px) {
         padding: 0 290px;
@@ -28,5 +54,8 @@
     }
     @media screen and (max-width: 750px) {
         padding: 0 1rem;
+    }
+    @media screen and (max-width: 350px) {
+        padding: 0 0.4rem;
     }
 }

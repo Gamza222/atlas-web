@@ -6,12 +6,18 @@
     &__container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin-top: var(--container-margin-top);
+        margin-top: 10rem;
+        margin-bottom: 8rem;
         align-items: center;
         gap: 2.5rem;
 
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width: 1400px) {
             grid-template-columns: 1fr;
+        }
+
+        @media screen and (max-width: 1000px) {
+            margin-top: 5rem;
+            margin-bottom: 4rem;
         }
 
         &__text {
@@ -23,8 +29,10 @@
             align-items: center;
             gap: 3rem;
             padding: 2rem 4rem;
+            grid-column: 2;
 
-            @media screen and (max-width: 1200px) {
+            @media screen and (max-width: 1400px) {
+                grid-column: auto;
                 grid-row: 2;
             }
 
@@ -95,11 +103,46 @@
             }
         }
 
-        > img {
-            width: 100%;
+        > div:nth-child(2) {
+            display: flex;
+            grid-column: 1;
+            grid-row: 1;
+            gap: 2rem;
 
-            @media screen and (max-width: 1200px) {
+            @media screen and (max-width: 1400px) {
+                grid-column: auto;
                 grid-row: 1;
+                justify-content: space-around;
+            }
+
+            @media screen and (max-width: 1000px) {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            > img {
+                width: auto;
+                max-height: 620px;
+
+                @media screen and (max-width: 1700px) {
+                    max-height: 570px;
+                }
+    
+                @media screen and (max-width: 1400px) {
+                    max-height: 670px;
+                }  
+
+                @media screen and (max-width: 1000px) {
+                    width: max-content; 
+                }  
+
+                @media screen and (max-width: 700px) {
+                    max-height: 600px;
+                    width: auto;
+                }
+                @media screen and (max-width: 350px) {
+                    max-height: 400px;
+                }
             }
         }
     }

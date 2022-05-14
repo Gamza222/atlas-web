@@ -2,163 +2,209 @@
 
 .header {
     &__container {
-        padding: 14px 140px;
+        padding: 0.1rem 2rem;
         display: flex;
+        background-color: $color-primary;
         justify-content: space-between;
-        align-items: center; 
-        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+        align-items: center;
+        position: fixed;
+        max-width: 3200px;
+        top: 0;
+        left: 0;
+        z-index: 110;
+        width: 101vw;
 
-        @media screen and (max-width: 1800px) {
-            padding: 14px 60px;
-        }
-
-        @media screen and (max-width: 1300px) {
-            padding: 14px 40px;
-        }
-
-        @media screen and (max-width: 350px) {
-            padding: 13px 8px;
+        @media screen and (max-width: 700px) {
+            padding: 1rem 0.5rem 1rem 1rem;
         }
 
         > a {
-            font-size: 66px;
-            color: $color-primary;
-            font-size: var(--super-big-font-size);
-            margin-right: 90px;
-            font-weight: 400;
+            font-size: 60px;
+            font-weight: 500;
+            font-family: 'Raleway';
+            color: #fff;
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            font-weight: 700;
 
-            @media screen and (max-width: 1800px) {
-                margin-right: 60px;
+            @media screen and (max-width: 1500px) {
+                font-size: 50px;
             }
 
-            @media screen and (max-width: 1350px) {
-                margin-right: 30px;
+            @media screen and (max-width: 1000px) {
+                font-size: 35px;
+                margin-left: -0.5rem;
             }
 
-            @media screen and (max-width: 550px) {
-                margin-right: 0;
+            > img {
+                margin-top: 1rem;
+                height: 80px;
+                width: max-content;
+                margin-right: -0.2rem;
+
+                @media screen and (max-width: 1500px) {
+                    height: 70px;
+                    margin-top: 0.5rem;
+                }
+                @media screen and (max-width: 1000px) {
+                    height: 50px;
+                    margin-top: 0.4rem;
+                }
             }
         }
 
         &__nav {
             display: flex;
-            margin: 0 auto;
-            
-            @media screen and (max-width: 1100px) {
-                display: none;
+            align-items: center;
+            gap: 2rem;
+
+            @media screen and (max-width: 1250px) {
+                gap: 4rem;
             }
 
             > ul {
                 display: flex;
-                gap: 80px;
                 align-items: center;
+                gap: 6rem;
 
-                @media screen and (max-width: 1800px) {
-                    gap: 60px;
+                @media screen and (max-width: 1500px) {
+                    gap: 4rem;
                 }
 
-                @media screen and (max-width: 1300px) {
-                    gap: 40px;
-                }
+               
 
                 > li {
                     > a {
                         position: relative;
-                        font-size: var(--normal-font-size);
-                        white-space: nowrap;
+                        color: #fff;
+                        font-family: 'Roboto';
+                        font-style: normal;
                         font-weight: 400;
-                        color: $color-primary;
+                        font-size: 30px;
+                        letter-spacing: 0.05em;
+
+                        @media screen and (max-width: 1500px) {
+                            font-size: 25px;
+                        }
+
+                        @media screen and (max-width: 1250px) {
+                            font-size: 30px;
+                        }
 
                         &:before {
-                            position: absolute;
                             content: '';
+                            position: absolute;
                             height: 100%;
-                            background-color: $color-primary;
                             width: 2px;
-                            right: -40px;
+                            background-color: #fff;
+                            right: -3rem;
 
-                            @media screen and (max-width: 1800px) {
-                                right:-33px;
+                            @media screen and (max-width: 1500px) {
+                                right: -2rem;
                             }
 
-                            @media screen and (max-width: 1300px) {
-                                right: -20px;
+                            @media screen and (max-width: 1250px) { 
+                                display: none;
                             }
                         }
                     }
                 }
 
-                li:last-child {
-                        a {
-                            &:before {
+                > li:last-child {
+                    a {
+                        &:before {
                             content: none;
                         }
                     }
                 }
             }
-        }
 
-        &__btn {
-            font-size: var(--normal-font-size);
-            white-space: nowrap;
-            padding: 8px 45px;
-            background-color: $color-primary;
-            margin-left: 20px;
+            @media screen and (max-width: 1250px) {
+                flex-direction: column;
+                position: fixed;
+                transform: none;
+                transition: 0.3s linear;
+                top: 60px;
+                background-color: $color-primary;
+                width: 100vw;
+                height: 100vh;
+                z-index: 100;
+                left: -120%;
+                align-items: center;
+                justify-content: center;
+                padding-bottom: 10%;
 
-            @media screen and (max-width: 1100px) {
-                display: none;
+                > ul {
+                    flex-direction: column;
+                }
+
+            }
+
+
+            @media screen and (max-width: 700px) {
+                padding-bottom: 30%;
+                top: 80px;
+            }
+
+            > button {
+                background-color: #fff;
+                height: fit-content;
+                padding: 0.5rem 1.5rem;
+                border: 2px solid transparent;
+
+                &:hover {
+                    background-color: transparent;
+                    border-color: #fff;
+                    > a {
+                        color: #fff;
+                    }
+                }
+                
+                > a {
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 28px;
+                    color: $color-primary;
+                    line-height: normal;
+
+                    @media screen and (max-width: 1500px) {
+                        font-size: 20px;
+                    }
+                    @media screen and (max-width: 1250px) {
+                        font-size: 25px;
+                    }
+                }
             }
         }
 
         &__btnsm {
             display: none;
-            background-color: transparent;
-            color: $color-primary;
-            font-size: 2rem;
-            padding: 0;
-            height: 32px;
-            border: none;
+            padding: 1rem;
+            width: fit-content;
+            height: fit-content;
 
-            @media screen and (max-width: 1100px) {
+            > svg {
+                color: #fff;
+                width: max-content;
+                height: 28px;
+            }
+
+            @media screen and (max-width: 1250px) {
                 display: block;
             }
-        }
-
-        > svg {
-            display: none;
-
-            @media screen and (max-width: 1100px) {
-                display: block;
-            }
-        }
-    }
-
-    &__navsm {
-        display: none;
-    
-        @media screen and (max-width: 1100px) {
-            transition: 0.1s linear;
-            max-height: 0;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        > ul {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            font-size: var(--normal-font-size);
-            margin-bottom: 1rem;
-            text-align: center;
         }
     }
 }
+    
 
 .isMenu {
-    max-height: 500px;
-    padding: 2rem;
+    transform: translateX(calc(115%));
+
+    @media screen and (max-width: 700px) {
+        transform: translateX(calc(115%));
+    }
 }
 
 

@@ -1,8 +1,10 @@
 import React from 'react'
 import Graph from './Graph/Graph'
 import * as classes from './Product.module.scss'
+import { Link } from 'gatsby'
 import Graph1 from '../../../../images/graph1.png'
 import Graph2 from '../../../../images/graph2.png'
+import Graph3 from '../../../../images/graph3.png'
 
 export default function Product() {
   return (
@@ -12,6 +14,7 @@ export default function Product() {
             <div className={classes.product__container__graphs}>
                 {/*grapgh components */}
                 <Graph 
+                    supHeader={'Emmisions'}
                     header={"over time"} 
                     adding={"Monthly"} 
                     letter={"Measure"} 
@@ -22,8 +25,8 @@ export default function Product() {
                 />
 
                 <Graph 
-                    header={"over time"} 
-                    adding={"Monthly"} 
+                    supHeader={'Emmisions'}
+                    header={"by category"} 
                     letter={"Analyze"} 
                     text={<p>analyze your emissions. <br />descriptive text here</p>} 
                     children={
@@ -32,16 +35,18 @@ export default function Product() {
                 />
 
                 <Graph 
-                    header={"over time"} 
+                    supHeader={'Emmisions'}
+                    header={"benchmark"} 
                     letter={"Reduce"} 
                     text={<p>reduce your emissions. <br /> descriptive text here</p>} 
                     children={
-                        <img src={Graph2} alt="" className={classes.grapghImage}/>
+                        <img src={Graph3} alt="" className={classes.grapghImage}/>
                     } 
                 />
                 
                 <Graph 
-                    header={"over time"} 
+                    supHeader={'Low Carbon Item'}
+                     
                     letter={"Subsidize"} 
                     text={<p>subsidize your products.<br /> descriptive text here</p>} 
                     children={
@@ -50,7 +55,7 @@ export default function Product() {
                 />
                 {/*grapgh components */}
             </div>
-            <button>Request a Demo  </button>
+            <button><Link to="/requestDemo">Request a Demo</Link></button>
         </div>
     </section>
   )

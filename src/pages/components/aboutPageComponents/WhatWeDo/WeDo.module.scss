@@ -7,7 +7,7 @@
         position: relative;
         margin-top: var(--container-margin-top);
         @media screen and (max-width: 1050px) {
-            background-color: $container-color-variant;
+            background-color: rgba(76, 133, 150, 0.11);
             border-radius: $container-border;
             box-shadow: $container-shadow;
         }
@@ -58,10 +58,11 @@
 
             > h3 {
                 text-align: end;
-                font-size: 50px;
+                font-size: 80px;
                 color: #fff;
                 white-space: nowrap;
                 width: 100%;
+                font-weight: 500;
 
                 @media screen and (max-width: 1350px) {
                     width: fit-content;
@@ -81,7 +82,7 @@
                 > p {
                     white-space: nowrap;
                     font-size: var(--normal-font-size);
-                    line-height: 32px;
+                    line-height: 47px;
                     color: #fff;
 
                     @media screen and (max-width: 1050px) {

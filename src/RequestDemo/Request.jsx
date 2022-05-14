@@ -1,5 +1,4 @@
 import React from 'react'
-import Form from '../UI/Form/Form'
 import * as classes from './Request.module.scss'
 
 export default function RequestDemo() {

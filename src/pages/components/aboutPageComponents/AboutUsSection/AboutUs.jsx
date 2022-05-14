@@ -8,11 +8,16 @@ export default function AboutUs() {
         <div className={classes.aboutUs__container}>
             <img src={sea} alt="sea bg" />
             <div className={classes.aboutUs__container__text}>
-              <h3>ATLAS</h3>
-              <div className={classes.aboutUs__container__text__description}>
-                <h2>ABOUT US</h2>
-                <p>Creating the platform to <br />communicate companies’ net <br />zero efforts to their customers.</p>
-              </div>
+              <p>
+                Our web platform analyzes and <br/> reduces the CO2 emissions of your <span>company</span>
+                <br/>
+                <br/>
+                Our app tracks the CO2 of purchases and <br/> provide discounts for low CO2 products for <br/>your <span>customers </span>
+                <br/>
+                <br/>
+                <span>Read more on our Product page...</span>
+              </p>
+              <h2>WHAT WE DO</h2>
             </div>
             
         </div>

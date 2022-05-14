@@ -10,15 +10,13 @@ export default function WeDo() {
             <div className={classes.weDo__container__text}>
               <div>
                 <p>
-                    Lorem ipsum dolor sit amet,<br /> consectetur adipiscing elit, sed<br />  
-                    do eiusmod tempor incididunt ut<br /> labore et dolore magna aliqua. 
-                    <br />
-                    <br />
-                    Ut enim ad minim veniam, quis nostrud<br /> 
-                    exercitation ullamco laboris nisi ut aliquip ex ea<br /> commodo consequatrunt mollit anim id est laborum.
+                A platform to help any 
+                <br />
+                company and their customers 
+                <br />lower their carbon emissions 
                 </p>
               </div>
-              <h3>WHAT WE DO</h3>
+              <h3>ATLAS</h3>
             </div>
         </div>
     </section>
