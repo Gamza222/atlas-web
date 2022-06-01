@@ -1,0 +1,124 @@
+@import '../../../assets/mixins';
+
+.SideBar {
+    position: fixed;
+    width: 202px;
+    left: 0;
+    height: 100vh;
+    background-color: $color-primary;
+    padding: 64px 18px 0px 17px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 1150px) {
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        right: 100%;
+        left: auto;
+        top: 89px;
+        transition: 0.3s linear;
+    }
+
+    > button {
+        color: #fff;
+        position: relative;
+        font-family: $josefin-font;
+
+        > img {
+            margin-right: 7px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: -7px;
+            width: 150%;
+            left: -20px;
+            height: 1px;
+            background-color: #fff;
+        }
+    }
+
+    &__item {
+        margin-top: 1.7rem;
+        display: flex;
+        flex-direction: column;
+
+        > button {
+            font-weight: 700;
+            margin-left: 8px;
+            > img {
+                font-size: 3.3rem;
+                margin-right: 17px;
+                margin-bottom: -2px;
+                transform: rotate(-90deg);
+                transition: 0.1s linear;
+            }
+        }
+
+        &__content {
+            display: flex;
+            max-height: 0;
+            height: 0;
+            overflow: hidden;
+            flex-direction: column;
+            gap: 26px;
+            transition: 0.2s ease;
+            margin-top: 0.3rem;
+
+            > a {
+                position: relative;
+                display: flex;
+                align-items: center;
+                font-size: var(--small-font-size-dashboard);
+                color: #fff;
+                font-weight: 400;
+                font-family: $main-font-variant;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    right: 0;
+                    bottom: -8px;
+                    height: 2px;
+                    background-color: #14873C;
+                    transition: 0.1s linear;
+                }
+
+                &:hover {
+                    &:before {
+                        width: 100%;
+                    }
+                }
+
+                > img {
+                    margin-right: 16px;
+                    width: 30px;
+                    height: 27px;
+                }
+
+
+            }
+        }
+    }
+}
+
+.isMenu {
+    max-height: 1000px;
+    height: auto;
+    margin-top: 1rem;
+    overflow: unset;
+}
+
+.buttonActive {
+    > img {
+        transform: none !important;
+    }
+}
+
+.menuActive {
+    transform: translateX(100%);
+}

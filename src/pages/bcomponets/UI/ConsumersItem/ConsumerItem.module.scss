@@ -1,0 +1,29 @@
+@import "../../../assets/mixins";
+
+.ConsumerItem {
+    width: 100%;
+    border-bottom: 1px solid #B9B9B9;
+    display: grid;
+    grid-template-columns: 0.6fr 0.5fr 0.7fr 1fr 0.5fr;
+    padding: 11px 3px;
+    padding-left: 20px;
+
+    > p {
+        font-size: var(--small-font-size-dashboard);
+        font-family: $main-font-variant;
+        font-weight: 400;
+        color: $color-primary;
+        white-space: nowrap;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        letter-spacing: 1px;
+        line-height: normal;
+    }
+
+    > p:nth-child(4) {
+        > span {
+            color: #868686;
+        }
+    }
+}

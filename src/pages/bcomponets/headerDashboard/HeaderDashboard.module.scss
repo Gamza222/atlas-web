@@ -1,0 +1,100 @@
+//1450
+@import '../../assets/mixins';
+
+.dashboardHeader {
+
+    &__container {
+        padding: 18px 0px 0px 36px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media screen and (max-width: 1150px) {
+            padding: 15px;
+            background-color: $color-primary;
+        }
+
+        > h2 {
+            font-family: $main-font;
+            font-size: 72px;
+            font-weight: 400;
+            color: $color-primary;
+
+            @media screen and (max-width: 1150px) {
+                font-size: 50px;
+                font-weight: 600;
+                color: #fff;
+            }
+            @media screen and (max-width: 850px) {
+                font-size: 40px;
+                font-weight: 600;
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            gap: 1rem;
+
+            @media screen and (max-width: 750px) {
+               flex-direction: column;
+               gap: 1rem;
+            }
+
+            #logout, #overviewBTN {
+                font-family: $main-font-variant;
+                color: #868686;
+                font-weight: 300;
+                font-size: 22px;
+                box-shadow: 0 5px 2px 0px rgb(0 0 0 / 25%);
+                height: fit-content;
+                padding: 1px 9px 1px 17px;
+                margin-top: -60px;
+    
+                @media screen and (max-width: 1150px) {
+                    margin-top: 0;
+                    font-size: 18px;
+                    background-color: #fff;
+                    padding: 2px 5px;
+                }
+    
+                &:active {
+                    transform: translateY(1px);
+                }
+            }
+
+            #overviewBTN {
+                display: none;
+
+                @media screen and (max-width: 1150px) {
+                    display: block;
+                }
+            }
+
+            #logout {
+                @media screen and (max-width: 1150px) {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+            #overviewBTN {
+                font-family: $main-font-variant;
+                color: #868686;
+                font-weight: 300;
+                font-size: 22px;
+                box-shadow: 0 5px 2px 0px rgb(0 0 0 / 25%);
+                height: fit-content;
+                padding: 1px 9px 1px 17px;
+                margin-top: -60px;
+    
+                @media screen and (max-width: 1150px) {
+                    margin-top: 0;
+                    font-size: 18px;
+                }
+    
+                &:active {
+                    transform: translateY(1px);
+                }
+            }
