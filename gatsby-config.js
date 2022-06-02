@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/atlas-website",
+  pathPrefix: "/atlas-web",
   siteMetadata: {
     title: ``,
     siteUrl: `https://www.yourdomain.tld`

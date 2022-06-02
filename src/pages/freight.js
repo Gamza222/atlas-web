@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import LayoutDashboard from '../bcomponets/LayoutDashboard/LayoutDashboard'
-import recyclingPic from '../../dashboardImages/recycling-pic.svg'
-import BoxDb from '../bcomponets/UI/BoxDb/BoxDb'
-import IECircle from '../bcomponets/UI/IECircle/IECircle'
+import LayoutDashboard from './bcomponets/LayoutDashboard/LayoutDashboard'
+import recyclingPic from '../dashboardImages/recycling-pic.svg'
+import BoxDb from './bcomponets/UI/BoxDb/BoxDb'
+import IECircle from './bcomponets/UI/IECircle/IECircle'
 
 const text = [
   {

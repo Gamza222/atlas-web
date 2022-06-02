@@ -23,14 +23,14 @@ export default function SideBar({activeMenu, setActiveMenu}) {
         <div className={classes.SideBar__item}>
           <button className={`buttonDb ${active == 1 ? classes.buttonActive : ''}`} onClick={() => {setActive(active == 1 ? 0 : 1)}}><img src={arrow} alt="" />Total</button>
           <div className={`${classes.SideBar__item__content} ${active == 1 ? classes.isMenu : ''}`}>
-            <a href="/dashboard/freight"><img src={truck} alt="truck" />Freight</a>
-            <a href="/dashboard/inventory"><img src={inventory} alt="truck" />Inventory</a>
-            <a href="/dashboard/recycling"><img src={recycling} alt="recycling" />Recycling</a>
-            <a href="/dashboard/energy"><img src={energy} alt="energy" />Energy</a>
-            <a href="/dashboard/suppliers"><img src={suppliers} alt="suppliers" />Suppliers</a>
-            <a href="/dashboard/employees"><img src={employee} alt="employees" />Employees</a>
-            <a href="/dashboard/consumers"><img src={consumers} alt="consumers" />Consumers</a>
-            <a href="/dashboard/products"><img src={products} alt="products" />Products</a>
+            <a href="/freight"><img src={truck} alt="truck" />Freight</a>
+            <a href="/inventory"><img src={inventory} alt="truck" />Inventory</a>
+            <a href="/recycling"><img src={recycling} alt="recycling" />Recycling</a>
+            <a href="/energy"><img src={energy} alt="energy" />Energy</a>
+            <a href="/suppliers"><img src={suppliers} alt="suppliers" />Suppliers</a>
+            <a href="/employees"><img src={employee} alt="employees" />Employees</a>
+            <a href="/consumers"><img src={consumers} alt="consumers" />Consumers</a>
+            <a href="/products"><img src={products} alt="products" />Products</a>
           </div>
         </div>
         <div className={classes.SideBar__item}>

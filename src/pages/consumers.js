@@ -1,24 +1,33 @@
 import React, {useState} from 'react'
-import LayoutDashboard from '../bcomponets/LayoutDashboard/LayoutDashboard'
-import consumersPic from '../../dashboardImages/consumers-pic.svg'
+import LayoutDashboard from './bcomponets/LayoutDashboard/LayoutDashboard'
+import consumersPic from '../dashboardImages/consumers-pic.svg'
 import { CgSearch } from 'react-icons/cg'
-import arrow from '../../dashboardImages/arrow-blue.svg'
-import ConsumerItem from '../bcomponets/UI/ConsumersItem/ConsumerItem'
-
-const periods = [
-    //тут должны быть периоды времени 
-    '1 May - 31 May',
-    '1 June - 31 June',
-    '1 July - 31 July',
-];
+import arrow from '../dashboardImages/arrow-blue.svg'
+import ConsumerItem from './bcomponets/UI/ConsumersItem/ConsumerItem'
 
 const locations = [
-    //тут должны быть локации
     'Mike’s Chiswick',
+    'Mike’s Chiswick',
+    'Mike’s Chiswick',
+];
+
+const periods = [
     '1 June - 31 June',
     '1 July - 31 July',
+    '1 July - 31 August',
+]
+
+const data = [
+    {
+        date: <p>{`27th May, 2022`}<span>{`1.03pm`}</span></p>,
+        order: '#1234',
+        store: 'Mike’s Chiswick',
+        customer: <p>{`Hailee Peterson`}<span>{`Hailee.p@gmail.com`}</span></p>,
+        value: '£7.55'
+    }
+    
 ];
-     
+
     
 
 export default function Consumers() {
@@ -27,7 +36,7 @@ const [menu, setMenu] = useState(false);
 
 const [menuLocation, setMenuLocation] = useState(false);
 const [period, setPeriod] = useState(periods[0]);
-const [location, setLocation] = useState(locations[0]);
+const [location, setLocation] = useState();
 
 
 console.log(menu)
@@ -91,34 +100,18 @@ console.log(menu)
                             <p>Value</p>
                     </div>
                     <div className='consumers-list__content'>
-                            <ConsumerItem 
-                                OrderPlaced={<p>{`"27th May, 2022`}<span>{`1.03pm`}</span></p>}
-                                OrderNo={"#1234"}
-                                StoreLocation={"Mike’s Chiswick"}
-                                Customer={<p>{`Hailee Peterson`}<span>{`Hailee.p@gmail.com`}</span></p>}
-                                Value={"£7.55"}
+
+                        {data.map(elem => {
+                            return (
+                                <ConsumerItem 
+                                OrderPlaced={elem.date}
+                                OrderNo={elem.order}
+                                StoreLocation={elem.store}
+                                Customer={elem.customer}
+                                Value={elem.value}
                             />
-                            <ConsumerItem 
-                                OrderPlaced={<p>{`"27th May, 2022`}<span>{`1.03pm`}</span></p>}
-                                OrderNo={"#1234"}
-                                StoreLocation={"Mike’s Chiswick"}
-                                Customer={<p>{`Hailee Peterson`}<span>{`Hailee.p@gmail.com`}</span></p>}
-                                Value={"£7.55"}
-                            />
-                            <ConsumerItem 
-                                OrderPlaced={<p>{`"27th May, 2022`}<span>{`1.03pm`}</span></p>}
-                                OrderNo={"#1234"}
-                                StoreLocation={"Mike’s Chiswick"}
-                                Customer={<p>{`Hailee Peterson`}<span>{`Hailee.p@gmail.com`}</span></p>}
-                                Value={"£7.55"}
-                            />
-                            <ConsumerItem 
-                                OrderPlaced={<p>{`"27th May, 2022`}<span>{`1.03pm`}</span></p>}
-                                OrderNo={"#1234"}
-                                StoreLocation={"Mike’s Chiswick"}
-                                Customer={<p>{`Hailee Peterson`}<span>{`Hailee.p@gmail.com`}</span></p>}
-                                Value={"£7.55"}
-                            />
+                            )
+                        })}
                     </div>
                 </div>
                 {/*list*/}
