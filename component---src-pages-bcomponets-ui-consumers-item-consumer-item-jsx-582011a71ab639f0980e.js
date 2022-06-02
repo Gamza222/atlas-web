@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkatlas_website=self.webpackChunkatlas_website||[]).push([[602],{7736:function(e,t,r){r.r(t),r.d(t,{default:function(){return n}});var l=r(7294);function n(e){return console.log(e.OrderNo),l.createElement("div",{className:"ConsumerItem-module--ConsumerItem--L5tor"},e.OrderPlaced,l.createElement("p",null,e.OrderNo),l.createElement("p",null,e.StoreLocation),e.Customer,l.createElement("p",null,e.Value))}}}]);
+//# sourceMappingURL=component---src-pages-bcomponets-ui-consumers-item-consumer-item-jsx-582011a71ab639f0980e.js.map
