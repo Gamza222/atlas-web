@@ -6,7 +6,7 @@ import IECircle from '../bcomponets/UI/IECircle/IECircle'
 
 const text = [
   {
-    number: 1,
+    number: 2,
     name: "Textiles Recycling",
     buttons: [
       {
@@ -19,10 +19,21 @@ const text = [
         button: "Octopus Energy",
         description: 'Estimated Cost: £1,000 per annum'
       }
-    ]
+    ],
+    circles: {
+      circle1: {
+        width: '147px',
+        number: '500 Kg CO2'
+      },
+      circle2: {
+        width1: '137px',
+        number: '500 Kg CO2',
+        width2: '200px'
+      }
+    }
   },
   {
-    number: 2,
+    number: 3,
     name: "Textiles Recycling",
     buttons: [
       {
@@ -40,7 +51,7 @@ const text = [
 ]
 
 export default function Freight() {
-  const [boxTextActive, setboxTextActive] = useState(0);
+  const [boxTextActive, setboxTextActive] = useState(2);
 
   return (
     <LayoutDashboard>
@@ -99,11 +110,15 @@ export default function Freight() {
                       <div className='box-circles-content'>
                         <div className='emissions-content emissions-content1'>
                               <p>Industry <br /> Benchmark</p>
-                              <IECircle Width={'137px'} />
+                              <IECircle Width={text.find(x => {
+                                console.log(x.number == boxTextActive)
+                                return x.number == boxTextActive}).circles.circle1.width
+                              
+                              }  
+                              />
                         </div>
                         <div className='emissions-content emissions-content2'>
-                              <p>Industry <br /> Benchmark</p>
-                              <IECircle Width={'137px'} />
+                              
                         </div>
                       </div>
                 </div>

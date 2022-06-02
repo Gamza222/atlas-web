@@ -92,31 +92,31 @@ console.log(menu)
                     </div>
                     <div className='consumers-list__content'>
                             <ConsumerItem 
-                                OrderPlaced={["27th May, 2022", "1.03pm"]} 
+                                OrderPlaced={<p>{`"27th May, 2022`}<span>{`1.03pm`}</span></p>}
                                 OrderNo={"#1234"}
                                 StoreLocation={"Mike’s Chiswick"}
-                                Customer={["Hailee Peterson", "Hailee.p@gmail.com"]}
+                                Customer={<p>{`Hailee Peterson`}<span>{`Hailee.p@gmail.com`}</span></p>}
                                 Value={"£7.55"}
                             />
                             <ConsumerItem 
-                                OrderPlaced={["27th May, 2022", "1.03pm"]} 
+                                OrderPlaced={<p>{`"27th May, 2022`}<span>{`1.03pm`}</span></p>}
                                 OrderNo={"#1234"}
                                 StoreLocation={"Mike’s Chiswick"}
-                                Customer={["Hailee Peterson", "Hailee.p@gmail.com"]}
+                                Customer={<p>{`Hailee Peterson`}<span>{`Hailee.p@gmail.com`}</span></p>}
                                 Value={"£7.55"}
                             />
                             <ConsumerItem 
-                                OrderPlaced={["27th May, 2022", "1.03pm"]} 
+                                OrderPlaced={<p>{`"27th May, 2022`}<span>{`1.03pm`}</span></p>}
                                 OrderNo={"#1234"}
                                 StoreLocation={"Mike’s Chiswick"}
-                                Customer={["Hailee Peterson", "Hailee.p@gmail.com"]}
+                                Customer={<p>{`Hailee Peterson`}<span>{`Hailee.p@gmail.com`}</span></p>}
                                 Value={"£7.55"}
                             />
                             <ConsumerItem 
-                                OrderPlaced={["27th May, 2022", "1.03pm"]} 
+                                OrderPlaced={<p>{`"27th May, 2022`}<span>{`1.03pm`}</span></p>}
                                 OrderNo={"#1234"}
                                 StoreLocation={"Mike’s Chiswick"}
-                                Customer={["Hailee Peterson", "Hailee.p@gmail.com"]}
+                                Customer={<p>{`Hailee Peterson`}<span>{`Hailee.p@gmail.com`}</span></p>}
                                 Value={"£7.55"}
                             />
                     </div>
