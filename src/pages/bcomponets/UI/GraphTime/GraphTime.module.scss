@@ -1,0 +1,55 @@
+@import '../../../assets/mixins';
+
+.graph {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__2 {
+        width: 39px;
+        position: relative;
+       
+        background: #95DCAE;
+        border: 1px dashed #14873C;
+    
+        > p {
+            font-size: 15px;
+            color: $color-primary;
+            letter-spacing: normal;
+            font-family: $main-font-variant;
+        }
+    
+        > p:nth-child(1) {
+            position: absolute;
+            left: -4rem;
+            top: -0.1rem;
+            transform: rotate(-45deg);
+            font-weight: 500;
+        }
+    }
+
+    &__1 {
+        background: #14873C;
+        width: 39px;
+        position: relative;
+    
+    > p {
+        font-size: var(--small-font-size-dashboard);
+        color: $color-primary;
+        font-family: $main-font-variant;
+        font-weight: 500;
+        letter-spacing: normal;
+        position: absolute;
+        right: -3rem;
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+    }
+
+    &:hover {
+        > p {
+            display: block;
+        }
+    }
+    }
+}

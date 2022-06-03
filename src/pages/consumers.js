@@ -36,7 +36,7 @@ const [menu, setMenu] = useState(false);
 
 const [menuLocation, setMenuLocation] = useState(false);
 const [period, setPeriod] = useState(periods[0]);
-const [location, setLocation] = useState();
+const [location, setLocation] = useState(0);
 
 
 console.log(menu)

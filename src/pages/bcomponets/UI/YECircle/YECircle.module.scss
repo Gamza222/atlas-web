@@ -1,9 +1,23 @@
 @import "../../../assets/mixins";
 
-.circle {
+.bigCircle {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: #95DCAE;
+    border: 1px dashed #14873C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+
+    
+}
+
+.smallCircle {
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-color: #14873C;
+    outline: 1px dashed #14873C;
     display: flex;
     align-items: center;
     justify-content: center;
