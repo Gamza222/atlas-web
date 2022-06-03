@@ -13,11 +13,59 @@ import GraphTime from '../bcomponets/UI/GraphTime/GraphTime'
 
 const graphOT = [
   {
-    name: 'Chiswick',
+    name: 'January',
     width1: '60%', //нужно точно знать как это строится
     width2: `${15 + ((5 / 5) * 2)}%`, //нужно точно знать как это строится
     kg: '5kg'
   },
+  {
+    name: 'February',
+    width1: '60%', //нужно точно знать как это строится
+    width2: `${15 + ((5 / 5) * 2)}%`, //нужно точно знать как это строится
+    kg: '5kg'
+  }, 
+  {
+    name: 'March',
+    width1: '60%', //нужно точно знать как это строится
+    width2: `${28 + ((5 / 5) * 2)}%`, //нужно точно знать как это строится
+    kg: '10kg'
+  }, 
+  {
+    name: 'April',
+    width1: '60%', //нужно точно знать как это строится
+    width2: `${28 + ((5 / 5) * 2)}%`, //нужно точно знать как это строится
+    kg: '10kg'
+  }, 
+  {
+    name: 'May',
+    width1: '60%', //нужно точно знать как это строится
+    width2: `${28 + ((5 / 5) * 2)}%`, //нужно точно знать как это строится
+    kg: '10kg'
+  }, 
+  {
+    name: 'June',
+    width1: '60%', //нужно точно знать как это строится
+    width2: `${28 + ((5 / 5) * 2)}%`, //нужно точно знать как это строится
+    kg: '10kg'
+  }, 
+  {
+    name: 'July',
+    width1: '60%', //нужно точно знать как это строится
+    width2: `${28 + ((5 / 5) * 2)}%`, //нужно точно знать как это строится
+    kg: '10kg'
+  }, 
+  {
+    name: 'August',
+    width1: '60%', //нужно точно знать как это строится
+    width2: `${28 + ((5 / 5) * 2)}%`, //нужно точно знать как это строится
+    kg: '10kg'
+  }, 
+  {
+    name: 'September',
+    width1: '60%', //нужно точно знать как это строится
+    width2: `${28 + ((5 / 5) * 2)}%`, //нужно точно знать как это строится
+    kg: '10kg'
+  }, 
 ]
 
 const graphS = [
@@ -282,18 +330,18 @@ export default function Freight() {
                     <h3><span>Suggested</span> solutions</h3>
                     <button className='buttonDb'>Monthly<BsArrowRight/></button> 
                 </div>
-                <div className='box-content'>
+                <div className='box-content last-box'>
                   <div className='graphsOT'>
-                      <div className='graphsOT__line' />
                       <div className="graphsOT__graphs">
                           {
                             graphOT.map(gr => {
                               return(
-                                <GraphTime GRSWidth1={gr.width1} GRSWidth2={gr.width2} Name={gr.name} Kg={gr.kg} />
+                                <GraphTime GRSWidth1={gr.width1} GRSWidth2={gr.width2} Name={gr.name.split('')[0]} Kg={gr.kg} />
                               )
                             })
                           }
                       </div>
+                      <div className='graphsOT__line' />
                   </div>
                 </div>
               </BoxDb>

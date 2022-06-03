@@ -86,12 +86,16 @@ body {
     padding: 20px 45px;
     position: relative;
 
+    @media  screen and (max-width: 750px) {
+        width: 100%;
+    }
     @media  screen and (max-width: 600px) {
         width: 100%;
         padding: 20px 15px;
     }
     @media  screen and (max-width: 350px) {
         width: 85%;
+        padding: 20px 10px;
     }
     
 
@@ -217,6 +221,9 @@ body {
     @media  screen and (max-width: 600px) {
         width: 100%;
     }
+    @media  screen and (max-width: 300px) {
+        justify-items: start;
+    }
 }
 
 .box-content {
@@ -231,6 +238,7 @@ body {
     @media  screen and (max-width: 750px) {
         height: fit-content;
         width: 100%;
+        min-height: 300px;
     }
 
 }
@@ -465,8 +473,7 @@ body {
 }
 
 .box-sollutions-content {
-    padding: 0 30px;
-    padding-bottom: 30px;
+    padding: 30px 30px;
 
     @media screen and (max-width: 750px) {
         
@@ -742,7 +749,30 @@ body {
 
 .graphsOT {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px 40px 30px;
+    width: 100%;
+
+    @media screen and (max-width: 600px) {
+        max-width: 200px;
+    }
+
   &__graphs {
       height: 100%;
+      display: flex;
+      width: fit-content;
+      gap: 20px;
   }  
+  &__line {
+      width: 100%;
+      height: 1px;
+      background-color: $color-primary;
+  }
+}
+
+.last-box {
+    @media  screen and (max-width: 750px) {
+        height: 100%;
+    }
 }

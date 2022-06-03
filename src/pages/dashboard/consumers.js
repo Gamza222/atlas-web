@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import LayoutDashboard from './bcomponets/LayoutDashboard/LayoutDashboard'
-import consumersPic from '../dashboardImages/consumers-pic.svg'
+import LayoutDashboard from '../bcomponets/LayoutDashboard/LayoutDashboard'
+import consumersPic from '../../dashboardImages/consumers-pic.svg'
 import { CgSearch } from 'react-icons/cg'
-import arrow from '../dashboardImages/arrow-blue.svg'
-import ConsumerItem from './bcomponets/UI/ConsumersItem/ConsumerItem'
+import arrow from '../../dashboardImages/arrow-blue.svg'
+import ConsumerItem from '../bcomponets/UI/ConsumersItem/ConsumerItem'
 
 const locations = [
     'Mike’s Chiswick',
