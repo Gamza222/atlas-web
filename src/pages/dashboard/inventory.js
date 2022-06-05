@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import LayoutDashboard from '../bcomponets/LayoutDashboard/LayoutDashboard'
-import freightPic from '../../dashboardImages/freight-pic.svg'
+import inventoryPic from '../../dashboardImages/Inventory-pic.svg'
 import BoxDb from '../bcomponets/UI/BoxDb/BoxDb'
 import IECircle from '../bcomponets/UI/IECircle/IECircle'
 import YECircle from '../bcomponets/UI/YECircle/YECircle'
@@ -196,7 +196,7 @@ const text = [
   }
 ]
 
-export default function Freight() {
+export default function Inventory() {
   const [boxTextActive, setboxTextActive] = useState(2);
   const [circle, setCircle] = useState(text[0].buttons[0].num);
   const [drop, setDrop] = useState(false);
@@ -208,9 +208,9 @@ export default function Freight() {
     <LayoutDashboard>
         <div className='db-container-content'>
             <div className='db-header'>
-                <img src={freightPic} alt="" />
-                <h1>FREIGHT</h1>
-                <img src={freightPic} alt="" />
+                <img src={inventoryPic} alt="" />
+                <h1>INVENTORY</h1>
+                <img src={inventoryPic} alt="" />
             </div>
             <div className='boxes-container'>
               <BoxDb>

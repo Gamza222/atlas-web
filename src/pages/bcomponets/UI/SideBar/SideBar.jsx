@@ -35,29 +35,15 @@ export default function SideBar({activeMenu, setActiveMenu}) {
           </div>
         </div>
         <div className={classes.SideBar__item}>
-          <button className={`buttonDb ${active == 2 ? classes.buttonActive : ''}`} onClick={() => {setActive(active == 2 ? 0 : 2)}}><img src={arrow} alt="" />Reduce</button>
+          <button className={`buttonDb ${active == 2 ? classes.buttonActive : ''}`} onClick={() => {setActive(active == 2 ? 0 : 2)}}><img src={arrow} alt="" />Discount</button>
           <div className={`${classes.SideBar__item__content} ${active == 2 ? classes.isMenu : ''}`}>
-            <Link to="/dashboard/freight"><img src={truck} alt="truck" />Freight</Link>
-            <Link to="/dashboard/inventory"><img src={inventory} alt="truck" />Inventory</Link>
-            <Link to="/dashboard/recycling"><img src={recycling} alt="recycling" />Recycling</Link>
-            <Link to="/dashboard/energy"><img src={energy} alt="energy" />Energy</Link>
-            <Link to="/dashboard/suppliers"><img src={suppliers} alt="suppliers" />Suppliers</Link>
-            <Link to="/dashboard/employees"><img src={employee} alt="employees" />Employees</Link>
-            <Link to="/dashboard/consumers"><img src={consumers} alt="consumers" />Consumers</Link>
-            <Link to="/dashboard/products"><img src={products} alt="products" />Products</Link>
           </div>
         </div>
         <div className={classes.SideBar__item}>
-          <button className={`buttonDb ${active == 3 ? classes.buttonActive : ''}`} onClick={() => {setActive(active == 3 ? 0 : 3)}}><img src={arrow} alt="" />Subsidize    </button>
+          <button className={`buttonDb ${active == 3 ? classes.buttonActive : ''}`} onClick={() => {setActive(active == 3 ? 0 : 3)}}><img src={arrow} alt="" />Consumers</button>
           <div className={`${classes.SideBar__item__content} ${active == 3 ? classes.isMenu : ''}`}>
-            <a href="/dashboard/freight"><img src={truck} alt="truck" />Freight</a>
-            <a href="/dashboard/inventory"><img src={inventory} alt="truck" />Inventory</a>
-            <a href="/dashboard/recycling"><img src={recycling} alt="recycling" />Recycling</a>
-            <a href="/dashboard/energy"><img src={energy} alt="energy" />Energy</a>
-            <a href="/dashboard/suppliers"><img src={suppliers} alt="suppliers" />Suppliers</a>
-            <a href="/dashboard/employees"><img src={employee} alt="employees" />Employees</a>
-            <a href="/dashboard/consumers"><img src={consumers} alt="consumers" />Consumers</a>
-            <a href="/dashboard/products"><img src={products} alt="products" />Products</a>
+            <Link href="/dashboard/invoices"><img src={truck} alt="truck" />Invoices</Link>
+            <Link href="/dashboard/sales"><img src={inventory} alt="truck" />Sales</Link>
           </div>
         </div>
     </div>

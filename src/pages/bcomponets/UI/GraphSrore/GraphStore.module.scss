@@ -1,0 +1,70 @@
+@import '../../../assets/mixins';
+
+.graph {
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    > div {
+        height: 39px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+
+        &:hover {
+            > p {
+                display: block;
+            }
+        }
+    }
+
+    &__1, &__2, &__3, &__4, &__5, &__6, &__7 {
+        height: 100%;
+    }
+
+    &__1 {
+        background: #000A68;
+    }
+    &__2 {
+        background: #4C66C2;
+    }
+    &__3 {
+        background: #95DCAE;
+    }
+    &__4 {
+        background: #5CB67B;
+    }
+    &__5 {
+        background: #14873C;
+    }
+    &__6 {
+        background: #ECC528;
+    }
+    &__7 {
+        background: #F38448;
+    }
+}
+
+.number {
+    display: none;
+    color: $color-primary;
+    position: absolute;
+    top: -2.3rem;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.store {
+    position: absolute;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    left: -5rem;
+    transform: matrix(0.75, -0.43, 0.93, 0.79, 0, 0);
+    font-size: 15px;
+    color: #000A68;
+}
