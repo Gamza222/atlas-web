@@ -205,7 +205,7 @@ export default function Suppliers() {
   console.log(siteChoice)
 
   return (
-    <LayoutDashboard>
+    <LayoutDashboard name={'Suppliers Dashboard'}>
         <div className='db-container-content'>
             <div className='db-header'>
                 <img src={suppliersPic} alt="" />

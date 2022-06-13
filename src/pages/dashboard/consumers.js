@@ -42,7 +42,7 @@ const [location, setLocation] = useState(0);
 console.log(menu)
 
   return (
-    <LayoutDashboard>
+    <LayoutDashboard name={'Consumers Dashboard'}>
         <div className='db-container-content'>
             <div className='db-header'>
                 <img src={consumersPic} alt="consumersPic" />

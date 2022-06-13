@@ -205,7 +205,7 @@ export default function Energy() {
   console.log(siteChoice)
 
   return (
-    <LayoutDashboard>
+    <LayoutDashboard name={'Energy Dashboard'}>
         <div className='db-container-content'>
             <div className='db-header'>
                 <img src={energyPic} alt="" />

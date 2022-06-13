@@ -205,7 +205,7 @@ export default function Products() {
   console.log(siteChoice)
 
   return (
-    <LayoutDashboard>
+    <LayoutDashboard name={'Products Dashboard'}>
         <div className='db-container-content'>
             <div className='db-header'>
                 <img src={productsPic} alt="" />

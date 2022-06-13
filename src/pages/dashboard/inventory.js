@@ -205,7 +205,7 @@ export default function Inventory() {
   console.log(siteChoice)
 
   return (
-    <LayoutDashboard>
+    <LayoutDashboard name={'Inventory Dashboard'}>
         <div className='db-container-content'>
             <div className='db-header'>
                 <img src={inventoryPic} alt="" />

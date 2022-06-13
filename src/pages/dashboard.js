@@ -4,6 +4,9 @@ import BoxDb from './bcomponets/UI/BoxDb/BoxDb';
 import {BsArrowRight} from 'react-icons/bs'
 import IECircle from './bcomponets/UI/IECircle/IECircle';
 import GraphStore from './bcomponets/UI/GraphSrore/GraphStore';
+import GraphTimeDb from './bcomponets/UI/GraphTimeDb/GraphTimeDb';
+import DonutChart from "react-donut-chart";
+import arrow from '../dashboardImages/arrow-blue.svg'
 
 function calcWidth(num) {
   let newNum = num * 0.8;
@@ -24,6 +27,8 @@ function calcName(name) {
   }
 }
 
+
+
 const circles = {
   benchmark: {
     width: 137,
@@ -35,8 +40,506 @@ const circles = {
     number: 4000
   }
 } 
+const graphsMonth = [
+  {
+    name: 'January',
+    seg1: {
+      kg: 40,
+      height: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      height: calcWidth(18)
+    },
+    seg3: {
+      kg: 5,
+      height: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      height: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      height: calcWidth(8)
+    },
+    seg6: {
+      kg: 10,
+      height: calcWidth(19)
+    },
+    seg7: {
+      kg: 10,
+      height: calcWidth(10)
+    },
+  },
+  {
+    name: 'January',
+    seg1: {
+      kg: 40,
+      height: calcWidth(30)
+    },
+    seg2: {
+      kg: 8,
+      height: calcWidth(20)
+    },
+    seg3: {
+      kg: 5,
+      height: calcWidth(10)
+    },
+    seg4: {
+      kg: 15,
+      height: calcWidth(5)
+    },
+    seg5: {
+      kg: 20,
+      height: calcWidth(8)
+    },
+    seg6: {
+      kg: 10,
+      height: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      height: calcWidth(10)
+    },
+  },
+  {
+    name: 'January',
+    seg1: {
+      kg: 40,
+      height: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      height: calcWidth(8)
+    },
+    seg3: {
+      kg: 5,
+      height: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      height: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      height: calcWidth(15)
+    },
+    seg6: {
+      kg: 10,
+      height: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      height: calcWidth(10)
+    },
+  },
+  {
+    name: 'January',
+    seg1: {
+      kg: 40,
+      height: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      height: calcWidth(8)
+    },
+    seg3: {
+      kg: 5,
+      height: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      height: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      height: calcWidth(15)
+    },
+    seg6: {
+      kg: 10,
+      height: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      height: calcWidth(10)
+    },
+  },
+  {
+    name: 'January',
+    seg1: {
+      kg: 40,
+      height: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      height: calcWidth(8)
+    },
+    seg3: {
+      kg: 5,
+      height: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      height: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      height: calcWidth(15)
+    },
+    seg6: {
+      kg: 10,
+      height: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      height: calcWidth(10)
+    },
+  },
+  {
+    name: 'January',
+    seg1: {
+      kg: 40,
+      height: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      height: calcWidth(8)
+    },
+    seg3: {
+      kg: 5,
+      height: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      height: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      height: calcWidth(15)
+    },
+    seg6: {
+      kg: 10,
+      height: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      height: calcWidth(10)
+    },
+  },
+  {
+    name: 'January',
+    seg1: {
+      kg: 40,
+      height: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      height: calcWidth(8)
+    },
+    seg3: {
+      kg: 5,
+      height: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      height: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      height: calcWidth(15)
+    },
+    seg6: {
+      kg: 10,
+      height: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      height: calcWidth(10)
+    },
+  },
+  {
+    name: 'January',
+    seg1: {
+      kg: 40,
+      height: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      height: calcWidth(8)
+    },
+    seg3: {
+      kg: 5,
+      height: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      height: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      height: calcWidth(15)
+    },
+    seg6: {
+      kg: 10,
+      height: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      height: calcWidth(10)
+    },
+  },
+  {
+    name: 'January',
+    seg1: {
+      kg: 40,
+      height: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      height: calcWidth(8)
+    },
+    seg3: {
+      kg: 5,
+      height: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      height: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      height: calcWidth(15)
+    },
+    seg6: {
+      kg: 10,
+      height: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      height: calcWidth(10)
+    },
+  },
+  {
+    name: 'January',
+    seg1: {
+      kg: 40,
+      height: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      height: calcWidth(8)
+    },
+    seg3: {
+      kg: 5,
+      height: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      height: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      height: calcWidth(15)
+    },
+    seg6: {
+      kg: 10,
+      height: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      height: calcWidth(10)
+    },
+  },
+  {
+    name: 'January',
+    seg1: {
+      kg: 40,
+      height: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      height: calcWidth(8)
+    },
+    seg3: {
+      kg: 5,
+      height: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      height: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      height: calcWidth(15)
+    },
+    seg6: {
+      kg: 10,
+      height: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      height: calcWidth(10)
+    },
+  },
+  {
+    name: 'January',
+    seg1: {
+      kg: 40,
+      height: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      height: calcWidth(8)
+    },
+    seg3: {
+      kg: 5,
+      height: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      height: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      height: calcWidth(15)
+    },
+    seg6: {
+      kg: 10,
+      height: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      height: calcWidth(10)
+    },
+  },
+]
 
 const graphsStore = [
+  {
+    store: calcName('Chiswick'),
+    seg1: {
+      kg: 40,
+      width: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      width: calcWidth(8)
+    },
+    seg3: {
+      kg: 5,
+      width: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      width: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      width: calcWidth(15)
+    },
+    seg6: {
+      kg: 10,
+      width: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      width: calcWidth(10)
+    },
+  },
+  {
+    store: calcName('Chiswick'),
+    seg1: {
+      kg: 40,
+      width: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      width: calcWidth(8)
+    },
+    seg3: {
+      kg: 5,
+      width: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      width: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      width: calcWidth(15)
+    },
+    seg6: {
+      kg: 10,
+      width: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      width: calcWidth(10)
+    },
+  },
+  {
+    store: calcName('Chiswick'),
+    seg1: {
+      kg: 40,
+      width: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      width: calcWidth(8)
+    },
+    seg3: {
+      kg: 5,
+      width: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      width: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      width: calcWidth(15)
+    },
+    seg6: {
+      kg: 10,
+      width: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      width: calcWidth(10)
+    },
+  },
+  {
+    store: calcName('Chiswick'),
+    seg1: {
+      kg: 40,
+      width: calcWidth(40)
+    },
+    seg2: {
+      kg: 8,
+      width: calcWidth(8)
+    },
+    seg3: {
+      kg: 5,
+      width: calcWidth(5)
+    },
+    seg4: {
+      kg: 15,
+      width: calcWidth(8)
+    },
+    seg5: {
+      kg: 20,
+      width: calcWidth(15)
+    },
+    seg6: {
+      kg: 10,
+      width: calcWidth(7)
+    },
+    seg7: {
+      kg: 10,
+      width: calcWidth(10)
+    },
+  },
   {
     store: calcName('Chiswick'),
     seg1: {
@@ -164,31 +667,96 @@ const graphsStore = [
 
 ]
 
+const data = {
+  label: ["Pickup", "Delivery", "Ship to Home"],
+  datasets: [
+    {
+      data: [1, 1, 1, 3, 2, 3, 4, 2], // чем больше номер, тем больше доля в круге
+      backgroundColor: ["#14873C", "#ECC528","#F38448", "#192383", "#4C66C2", "#95DCAE", "#5CB67B"],
+      hoverBackgroundColor: ["red", "#36A2EB", "#FFCE56"],
+      borderWidth: 1
+    }
+  ],
+  text: "25%"
+};
+
+const options1 = {
+  responsive: true,
+  cutoutPercentage: 105,
+  maintainAspectRatio: false,
+  legend: {
+    display: true,
+    position: "bottom",
+    usePointStyle: "true",
+  }
+};
+
+
 export default function Dashboard() {
+  const [drop, setDrop] = useState(false);
+  const [site, setSite] = useState('HTL'); //HTL == highest to lowest LTH == lowest to highest
   const [siteChoice,setSiteChoice] = useState(''); //seiteChoice - выбранный сайт в серчбоксе
 
   return (
-    <LayoutDashboard>
+    <LayoutDashboard name={'Your Dashboard'}>
       <div className='db-container-content'>
         <div className='boxes-container'>
 
                 <BoxDb>
-                  <h3><span>Suggested</span> solutions</h3>
-                  <div className='box-content'>
-                  <ul class="chart-skills">
-                    <li>
-                      <span>CSS</span>
-                    </li>
-                    <li>
-                      <span>HTML</span>
-                    </li>
-                    <li>
-                      <span>PHP</span>
-                    </li>
-                    <li>
-                      <span>Python</span>
-                    </li>
-                  </ul>
+                  <h3><span>Emissions</span> by category</h3>
+                  <div className='box-content' style={{overflow: 'hidden'}}>
+                    <p className='circle-chart-number'>
+                      {'4,000kg'}
+                    </p>
+                  <DonutChart
+                    className="dchart"
+                    width={500}
+                    toggledOffset={0}
+                    height={500}
+                    innerRadius={0.62}
+                    selectedOffset={0}
+                    strokeColor={"#fff"}
+                    outerRadius={0.5}
+                    colors={[
+                      "#192383",
+                      "#4C66C2",
+                      "#95DCAE",
+                      "#5CB67B",
+                      "#14873C",
+                      "#ECC528",
+                      "#F38448"
+                    ]}
+                      data={[
+                        {
+                          label: "Freight",
+                          value: 15
+                        },
+                        {
+                          label: "Inventory",
+                          value: 23
+                        },
+                        {
+                          label: "Recycling",
+                          value: 23
+                        },
+                        {
+                          label: "Energy",
+                          value: 10
+                        },
+                        {
+                          label: "Suppliers",
+                          value: 7
+                        },
+                        {
+                          label: "Employees",
+                          value: 7
+                        },
+                        {
+                          label: "Products",
+                          value: 23
+                        }
+                      ]}
+                    />
                   </div>
                 </BoxDb>
 
@@ -221,11 +789,21 @@ export default function Dashboard() {
                   <div className='box-content'>
                             <div className='store-graphs-content'>
 
-                              <div className='box-ems-content__graphs__nav__search' style={{marginRight: '1rem', alignSelf: 'flex-end'}}>
+                            <div className='box-ems-content__graphs__nav' style={{position: 'static', width: '90%', padding:'1rem 0.5rem 0 1rem'}}>
+                              <div className='box-ems-content__graphs__nav__search' style={{marginTop: '-0.3rem'}}>
                                   <input type="text" onChange={(e) => setSiteChoice(e.target.value)} placeholder="Search by Site..."/>
                               </div>
+                              <div className='box-ems-content__graphs__nav__dropdown'>
+                                <button className='buttonDb' onClick={() => setDrop(!drop)}><img src={arrow} alt="" />{site === 'HTL' ? 'Rank Highest to Lowest' : 'Rank Lowest to Highest'}</button>
+                                <div style={ drop ? {display: 'block'}:{}}>
+                                  <button className='buttonDb' onClick={() => {setSite('HTL'); setDrop(!drop)}}>Rank Highest to Lowest</button>
+                                  <button className='buttonDb' onClick={() => {setSite('LTH'); setDrop(!drop)}}>Rank Lowest to Highest</button>
+                                </div>
+                              </div>
+                            </div>
                             
                               <div className='store-graphs'>
+                              
                                 <div className="store-graphs__line" />
                                 <div className='store-graphs__items'>
                                   {graphsStore.map(gr => {
@@ -249,7 +827,22 @@ export default function Dashboard() {
                       <button className='buttonDb'>Monthly<BsArrowRight/></button> 
                   </div>
                   <div className='box-content'>
-                    
+                    <div className='time-main-graphs'>
+                      <div className='time-main-graphs__item'>
+                        {
+                          graphsMonth.map(gr => {
+                            return(
+                              <GraphTimeDb 
+                              height1={gr.seg1.height} height2={gr.seg2.height} height3={gr.seg3.height} height4={gr.seg4.height} height5={gr.seg5.height} height6={gr.seg6.height} height7={gr.seg7.height} 
+                              kg1={gr.seg1.kg} kg2={gr.seg2.kg} kg3={gr.seg3.kg} kg4={gr.seg4.kg} kg5={gr.seg5.kg} kg6={gr.seg6.kg} kg7={gr.seg7.kg} 
+                              month={gr.name.split('')[0]}
+                              />
+                            )
+                          })
+                        }
+                      </div>
+                      <div className='time-main-graphs__line'/>
+                    </div>
                   </div>
                 </BoxDb>
 

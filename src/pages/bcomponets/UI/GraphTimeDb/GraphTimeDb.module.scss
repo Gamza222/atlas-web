@@ -2,11 +2,18 @@
 
 .graph {
     display: flex;
-    width: 100%;
+    height: 100%;
     position: relative;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: fit-content;
+
+    @media screen and (max-width: 750px) {
+        height: 334px;
+    }
 
     > div {
-        height: 39px;
+        width: 39px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -49,11 +56,11 @@
 .number {
     display: none;
     color: $color-primary;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     letter-spacing: normal;
-    right: 0;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -69,4 +76,17 @@
     transform: matrix(0.75, -0.43, 0.93, 0.79, 0, 0);
     font-size: 15px;
     color: #000A68;
+}
+
+.month {
+    position: absolute;
+    bottom: calc(-2.2rem);
+    height: fit-content;
+    line-height: normal;
+
+    font-weight: 400;
+    font-size: 18px;
+    color: #000A68;
+    letter-spacing: normal;
+    font-family: "Raleway", sans-serif;
 }

@@ -205,7 +205,7 @@ export default function Employees() {
   console.log(siteChoice)
 
   return (
-    <LayoutDashboard>
+    <LayoutDashboard name={'Employees Dashboard'}> 
         <div className='db-container-content'>
             <div className='db-header'>
                 <img src={employeesPic} alt="" />

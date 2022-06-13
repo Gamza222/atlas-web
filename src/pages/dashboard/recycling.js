@@ -205,7 +205,7 @@ export default function Recycling() {
   console.log(siteChoice)
 
   return (
-    <LayoutDashboard>
+    <LayoutDashboard name={'Recycling Dashboard'}>
         <div className='db-container-content'>
             <div className='db-header'>
                 <img src={recyclingPic} alt="" />

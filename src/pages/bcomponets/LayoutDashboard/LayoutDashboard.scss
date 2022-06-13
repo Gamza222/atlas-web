@@ -35,6 +35,10 @@ body {
     font-family: $main-font-variant;
 }
 
+.layout {
+    background: rgba(217, 217, 217, 0.2);
+}
+
 .containerDb {
     margin-left: 202px;
     //padding: 27px 36px;
@@ -51,7 +55,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 4rem;
 
     @media screen and (max-width: 1150px) {
         margin-left: 0;
@@ -94,7 +98,7 @@ body {
         padding: 20px 15px;
     }
     @media  screen and (max-width: 350px) {
-        width: 85%;
+        width: 77%;
         padding: 20px 10px;
     }
     
@@ -227,11 +231,13 @@ body {
 }
 
 .box-content {
+    background: #FFFFFF;
     border: 1px solid #B9B9B9;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
     width: 553px;
     height: 350px;
+    position: relative;
     padding: 10px 0;
     overflow: auto;
 
@@ -610,6 +616,9 @@ body {
                 padding: 0 11px;
                 margin-right: -3rem;
                 margin-top: 0.1rem;
+                @media screen and (max-width: 750px) {
+                    margin-right: -2rem;
+                }
                 > input {
                     font-family: 'Raleway';
                     background: transparent;
@@ -752,7 +761,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 5px 20px 40px 30px;
-    width: 100%;
+    width: fit-content;
 
     @media screen and (max-width: 750px) {
         max-width: 370px;
@@ -836,7 +845,6 @@ body {
     display: flex;
     height: 100%;
     padding: 10px 20px 10px 80px;
-    overflow-y: auto;
 
     &__line {
         background-color: $color-primary;
@@ -853,3 +861,142 @@ body {
     }
 }
 
+
+.time-main-graphs {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: fit-content;
+    padding: 20px 40px 50px 40px;
+
+    @media screen and (max-width: 750px) {
+        width: 300px;
+    }
+
+    &__line {
+        width: 100%;
+        height: 1px;
+        background-color: $color-primary;
+
+        @media screen and (max-width: 750px) {
+            display: none;
+        }
+    }
+
+    &__item {
+        height: 100%;
+        width: 100%;
+        padding: 0 20px;
+        display: flex;
+        gap: 2.8rem;
+    }
+}
+
+svg {
+    > g {
+        > text:nth-child(2) {
+            display: none;
+        }
+
+        > g {
+            > text {
+                font-family: $main-font;
+                font-size: 15px;
+                font-weight: 600;
+                fill: #000A68;
+            }
+                
+            > rect {
+                stroke: transparent;
+                rx: 50;
+            }
+        }
+    }
+}
+
+.dchart-legend {
+    transform: translate(-10px , 53px);
+
+    @media screen and (max-width: 750px) {
+        transform: translate(-10px, 120px);
+    }
+}
+.dchart-legend-item:nth-child(1) {
+    transform: translate(333px, 0);
+}
+.dchart-legend-item:nth-child(2) {
+    transform: translate(333px, 35px);
+}
+.dchart-legend-item:nth-child(3) {
+    transform: translate(333px, 70px);
+}
+.dchart-legend-item:nth-child(4) {
+    transform: translate(333px, 105px);
+}
+.dchart-legend-item:nth-child(5) {
+    transform: translate(333px, 140px);
+}
+.dchart-legend-item:nth-child(6) {
+    transform: translate(333px, 175px);
+}
+.dchart-legend-item:nth-child(7) {
+    transform: translate(333px, 210px);
+}
+
+
+
+.dchart {
+    width: 100% !important;
+    @media screen and (max-width: 750px) {
+        height: auto !important;
+    }
+}
+
+.dchart-arcs-path  {
+    stroke-dasharray: 10, 0, 0, 0;
+}
+
+.dchart-legend-item-label {
+    letter-spacing: normal;
+    font-weight: 500;
+    font-size: var(--small-font-size-dashboard);
+}
+
+.dchart-arcs {
+    transform: translate(-25px, 2px);
+
+    @media screen and (max-width: 750px) {
+        transform: translate(-26px, 71px);
+    }
+}
+
+
+.dchart-innertext-label {
+    display: none;
+}
+
+.circle-chart-number {
+    position: absolute;
+    left: 117px;
+    top: 165px;
+
+    font-family: 'Roboto';
+    letter-spacing: normal;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 35px;
+
+    color: #000A68;
+
+    @media screen and (max-width: 750px) {
+        display: none;
+    }
+}
+
+.box-content::-webkit-scrollbar {
+    background-color: transparent;
+    border-radius: 200px;
+    height: 5px;
+    width: 5px;
+}

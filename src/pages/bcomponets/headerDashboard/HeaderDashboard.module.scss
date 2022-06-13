@@ -16,9 +16,12 @@
 
         > h2 {
             font-family: $main-font;
-            font-size: 72px;
-            font-weight: 400;
+            font-size: 30px;
+            letter-spacing: normal;
+            margin-left: 3.5rem;
+            font-weight: 700;
             color: $color-primary;
+
 
             @media screen and (max-width: 1150px) {
                 font-size: 50px;
@@ -34,7 +37,11 @@
         &__buttons {
             display: flex;
             gap: 1rem;
+            align-self: flex-start;
 
+            @media screen and (max-width: 1150px) {
+               align-self: center;
+            }
             @media screen and (max-width: 750px) {
                flex-direction: column;
                gap: 1rem;
@@ -44,11 +51,11 @@
                 font-family: $main-font-variant;
                 color: #868686;
                 font-weight: 300;
+                background-color: #fff;
                 font-size: 22px;
                 box-shadow: 0 5px 2px 0px rgb(0 0 0 / 25%);
                 height: fit-content;
                 padding: 1px 9px 1px 17px;
-                margin-top: -60px;
     
                 @media screen and (max-width: 1150px) {
                     margin-top: 0;
@@ -97,4 +104,40 @@
                 &:active {
                     transform: translateY(1px);
                 }
-            }
+}
+
+.subsidy {
+    display: flex;
+    border: 2px solid #B9B9B9;
+    background-color: #fff;
+    border-radius: 5px;
+    align-items: center;
+    padding: 10px 20px;
+    align-self: flex-start;
+    @media screen and (max-width: 1150px) {
+        display: none;
+    }
+
+    > p {
+        margin-right: 15px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: var(--small-font-size-dashboard);
+        line-height: 23px;
+        text-align: center;
+        color: $color-primary;
+    }
+
+    > span {
+        margin-right: 30px;
+        margin-right: 15px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: var(--small-font-size-dashboard);
+        line-height: 23px;
+        text-align: center;
+        color: $color-primary;
+    }
+}

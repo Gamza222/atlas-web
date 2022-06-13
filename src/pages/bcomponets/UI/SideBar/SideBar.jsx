@@ -12,6 +12,10 @@ import recycling from '../../../../dashboardImages/recycling.svg'
 import suppliers from '../../../../dashboardImages/suppliers.svg'
 import truck from '../../../../dashboardImages/truck.svg'
 import { RiArrowDownSFill } from 'react-icons/ri'
+import totalPic from '../../../../dashboardImages/total-pic.svg'
+import offsetPic from '../../../../dashboardImages/offset-pic.svg'
+import reducePic from '../../../../dashboardImages/reduce-pic.svg'
+import salesPic from '../../../../dashboardImages/sales-pic.svg'
 
 export default function SideBar({activeMenu, setActiveMenu}) {
   console.log(activeMenu)
@@ -20,11 +24,18 @@ export default function SideBar({activeMenu, setActiveMenu}) {
 
   return (
     <div className={`${classes.SideBar} ${activeMenu ? classes.menuActive : ''}`}>
+        <button className='buttonDb'><Link to="/dashboard">ATLAS</Link></button>
         <button className='buttonDb'><img src={menuPic} alt="hamburger menu pic" />OVERVIEW</button>
         <div className={classes.SideBar__item}>
-          <button className={`buttonDb ${active == 1 ? classes.buttonActive : ''}`} onClick={() => {setActive(active == 1 ? 0 : 1)}}><img src={arrow} alt="" />Total</button>
+          <button className={`buttonDb ${active == 1 ? classes.buttonActive : ''}`} onClick={() => {setActive(active == 1 ? 0 : 1)}}><img src={totalPic} alt="" />Total</button>
           <div className={`${classes.SideBar__item__content} ${active == 1 ? classes.isMenu : ''}`}>
-            <Link to="/dashboard/freight"><img src={truck} alt="truck" />Freight</Link>
+            
+          </div>
+        </div>
+        <div className={classes.SideBar__item}>
+          <button className={`buttonDb ${active == 2 ? classes.buttonActive : ''}`} onClick={() => {setActive(active == 2 ? 0 : 2)}}><img src={reducePic} alt="" />Reduce</button>
+          <div className={`${classes.SideBar__item__content} ${active == 2 ? classes.isMenu : ''}`}>
+          <Link to="/dashboard/freight"><img src={truck} alt="truck" />Freight</Link>
             <Link to="/dashboard/inventory"><img src={inventory} alt="truck" />Inventory</Link>
             <Link to="/dashboard/recycling"><img src={recycling} alt="recycling" />Recycling</Link>
             <Link to="/dashboard/energy"><img src={energy} alt="energy" />Energy</Link>
@@ -35,15 +46,13 @@ export default function SideBar({activeMenu, setActiveMenu}) {
           </div>
         </div>
         <div className={classes.SideBar__item}>
-          <button className={`buttonDb ${active == 2 ? classes.buttonActive : ''}`} onClick={() => {setActive(active == 2 ? 0 : 2)}}><img src={arrow} alt="" />Discount</button>
-          <div className={`${classes.SideBar__item__content} ${active == 2 ? classes.isMenu : ''}`}>
+          <button className={`buttonDb ${active == 3 ? classes.buttonActive : ''}`} onClick={() => {setActive(active == 3 ? 0 : 3)}}><img src={offsetPic} alt="" />Offset</button>
+          <div className={`${classes.SideBar__item__content} ${active == 3 ? classes.isMenu : ''}`}>
           </div>
         </div>
         <div className={classes.SideBar__item}>
-          <button className={`buttonDb ${active == 3 ? classes.buttonActive : ''}`} onClick={() => {setActive(active == 3 ? 0 : 3)}}><img src={arrow} alt="" />Consumers</button>
-          <div className={`${classes.SideBar__item__content} ${active == 3 ? classes.isMenu : ''}`}>
-            <Link href="/dashboard/invoices"><img src={truck} alt="truck" />Invoices</Link>
-            <Link href="/dashboard/sales"><img src={inventory} alt="truck" />Sales</Link>
+          <button className={`buttonDb ${active == 3 ? classes.buttonActive : ''}`} onClick={() => {setActive(active == 4 ? 0 : 4)}}><img src={salesPic} alt="" />Sales</button>
+          <div className={`${classes.SideBar__item__content} ${active == 4 ? classes.isMenu : ''}`}>
           </div>
         </div>
     </div>

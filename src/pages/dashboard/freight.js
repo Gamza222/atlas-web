@@ -205,7 +205,7 @@ export default function Freight() {
   console.log(siteChoice)
 
   return (
-    <LayoutDashboard>
+    <LayoutDashboard name={'Freight Dashboard'}>
         <div className='db-container-content'>
             <div className='db-header'>
                 <img src={freightPic} alt="" />

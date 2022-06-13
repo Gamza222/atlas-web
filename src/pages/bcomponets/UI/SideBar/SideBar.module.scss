@@ -7,7 +7,7 @@
     z-index: 100;
     height: 100vh;
     background-color: $color-primary;
-    padding: 64px 18px 0px 17px;
+    padding: 18px 18px 0px 17px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -22,21 +22,39 @@
         transition: 0.3s linear;
     }
 
-    > button {
+    > button:nth-child(1) {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 28px;
+        color: #FFFFFF;
+        cursor: pointer;
+
+        &:hover {
+           > a {
+               color: #FFFFFF;
+           }
+        }
+    }
+
+    > button:nth-child(2) {
         color: #fff;
         position: relative;
         font-family: $josefin-font;
+        margin-left: 7px;
 
         > img {
             margin-right: 7px;
         }
 
         &:before {
-            content: '';
+            content: "";
             position: absolute;
             bottom: -7px;
-            width: 150%;
-            left: -20px;
+            width: 140%;
+            left: -15px;
             height: 1px;
             background-color: #fff;
         }
@@ -48,14 +66,17 @@
         flex-direction: column;
 
         > button {
-            font-weight: 700;
-            margin-left: 8px;
+            font-weight: 800;
+            flex-direction: column;
+            letter-spacing: 1px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
             > img {
                 font-size: 3.3rem;
-                margin-right: 17px;
-                margin-bottom: -2px;
-                transform: rotate(-90deg);
+                margin-bottom: -2px;  
                 transition: 0.1s linear;
+                margin-bottom: 13px;
             }
         }
 
