@@ -205,13 +205,8 @@ export default function Freight() {
   console.log(siteChoice)
 
   return (
-    <LayoutDashboard name={'Freight Dashboard'}>
+    <LayoutDashboard name={'Freight Dashboard'} pic={freightPic}>
         <div className='db-container-content'>
-            <div className='db-header'>
-                <img src={freightPic} alt="" />
-                <h1>FREIGHT</h1>
-                <img src={freightPic} alt="" />
-            </div>
             <div className='boxes-container'>
               <BoxDb>
                 <h3><span>Suggested</span> solutions</h3>

@@ -1,16 +1,30 @@
 @import '../../../assets/mixins';
 
+.react-calendar__navigation button {
+    font-size: var(--small-font-size);
+    white-space: nowrap !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    border: none !important;
+    margin: 10px;
+}
+
 .SideBar {
     position: fixed;
-    width: 202px;
+    width: 240px;
     left: 0;
     z-index: 100;
     height: 100vh;
     background-color: $color-primary;
-    padding: 18px 18px 0px 17px;
+    padding: 23px 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    margin-top: 61px;
 
     @media screen and (max-width: 1150px) {
         position: fixed;
@@ -18,18 +32,31 @@
         width: 100vw;
         right: 100%;
         left: auto;
-        top: 89px;
+        top: 61px;
         transition: 0.3s linear;
+        margin-top: 0;
+    }
+
+    @media screen and (max-width: 750px) {
+        top: 91px;
     }
 
     > button:nth-child(1) {
-        font-family: 'Raleway';
+        padding: 0 16px;
+        font-family: 'Manrope';
         font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 28px;
-        margin-bottom: 28px;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: normal;
+        /* identical to box height */
+
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
         color: #FFFFFF;
+
+        mix-blend-mode: normal;
+        opacity: 0.4;
         cursor: pointer;
 
         &:hover {
@@ -66,17 +93,34 @@
         flex-direction: column;
 
         > button {
-            font-weight: 800;
-            flex-direction: column;
-            letter-spacing: 1px;
-            align-items: center;
-            justify-content: center;
+            padding: 0 16px;
+            font-family: 'Manrope';
             display: flex;
+            align-items: center;
+            letter-spacing: normal;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+            color: #FFFFFF;
+            opacity: 0.7;
+
             > img {
+                height: 20px;
+                width: 20px;
                 font-size: 3.3rem;
                 margin-bottom: -2px;  
                 transition: 0.1s linear;
-                margin-bottom: 13px;
+                margin-right: 11px;
+                margin-top: -2px;
+            }
+
+            > img:nth-child(2) {
+                margin-bottom: 0;
+                margin-right: 0;
+                margin-top: 0;
+                margin-left: auto;
+                transform: rotate(180deg);
             }
         }
 
@@ -86,7 +130,6 @@
             height: 0;
             overflow: hidden;
             flex-direction: column;
-            gap: 26px;
             transition: 0.2s ease;
             margin-top: 0.3rem;
 
@@ -94,32 +137,28 @@
                 position: relative;
                 display: flex;
                 align-items: center;
-                font-size: var(--small-font-size-dashboard);
-                color: #fff;
+                font-family: 'Manrope';
+                font-style: normal;
                 font-weight: 400;
-                font-family: $main-font-variant;
+                font-size: 14px;
+                line-height: 19px;
+                letter-spacing: normal;
+                flex-direction: row-reverse;
+                justify-content: start;
+                padding: 8px 0;
+                padding-left: 50px;
 
-                &:before {
-                    content: '';
-                    position: absolute;
-                    width: 0;
-                    right: 0;
-                    bottom: -8px;
-                    height: 2px;
-                    background-color: #14873C;
-                    transition: 0.1s linear;
-                }
+                color: #FFFFFF;
 
                 &:hover {
-                    &:before {
-                        width: 100%;
-                    }
+                    background: rgb(45, 80, 72, 0.5);
                 }
 
                 > img {
-                    margin-right: 16px;
-                    width: 30px;
-                    height: 27px;
+                    margin-left: auto;
+                    width: 25px;
+                    height: 24px;
+                    margin-right: 18px;
                 }
 
 
@@ -130,14 +169,18 @@
 
 .isMenu {
     max-height: 1000px;
+    margin-top: 20px !important;
     height: auto;
     margin-top: 1rem;
     overflow: unset;
 }
 
 .buttonActive {
+    opacity: 1 !important;
     > img {
         transform: none !important;
+        width: 21px !important;
+        height: 21px !important;
     }
 }
 
@@ -145,3 +188,4 @@
     transform: translateX(100%);
     z-index: 100;
 }
+

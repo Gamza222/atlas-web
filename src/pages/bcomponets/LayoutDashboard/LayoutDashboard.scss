@@ -36,15 +36,19 @@ body {
 }
 
 .layout {
-    background: rgba(217, 217, 217, 0.2);
+    background: #E5E5E5;
 }
 
 .containerDb {
-    margin-left: 202px;
+    height: 60px;
+    background-color: #000A68;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
     //padding: 27px 36px;
 
-    @media screen and (max-width: 1150px) {
-        margin-left: 0;
+    @media screen and (max-width: 750px) {
+        height: 90px;
     }
 }
 
@@ -55,7 +59,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 4rem;
+    margin-top: -1rem;
 
     @media screen and (max-width: 1150px) {
         margin-left: 0;
@@ -999,4 +1003,35 @@ svg {
     border-radius: 200px;
     height: 5px;
     width: 5px;
+}
+
+.header-subtitle {
+    margin-top: 40px;
+    margin-left: 240px;
+    padding: 0 24px 0 52px;
+    display: flex;
+    align-items: center;
+
+    > h2 {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 44px;
+        /* identical to box height */
+        color: #202020;
+        margin-right: 15px;
+    }
+
+    > img {
+        height: 50px;
+        width: 50px;
+    }
+
+    @media screen and (max-width: 1050px) {
+        margin-left: 0;
+    }
+    @media screen and (max-width: 750px) {
+        margin-top: 40px;
+    }
 }

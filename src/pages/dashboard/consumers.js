@@ -39,10 +39,10 @@ const [period, setPeriod] = useState(periods[0]);
 const [location, setLocation] = useState(0);
 
 
-console.log(menu)
+console.log(consumersPic)
 
   return (
-    <LayoutDashboard name={'Consumers Dashboard'}>
+    <LayoutDashboard name={'Consumers Dashboard'} pic={consumersPic}>
         <div className='db-container-content'>
             <div className='db-header'>
                 <img src={consumersPic} alt="consumersPic" />

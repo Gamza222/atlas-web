@@ -4,7 +4,7 @@ import './LayoutDashboard.scss'
 
 
 
-export default function LayoutDashboard({children, name}) {
+export default function LayoutDashboard({children, name, pic}) {
   useEffect(() => {
     const slider = document.querySelectorAll('.box-content');
     console.log(slider)
@@ -51,6 +51,10 @@ slider.forEach(slider => {
   return (
     <div className='layout'>
       <HeaderDashboard name={name}/>
+      <div className='header-subtitle'>
+        <h2>{name}</h2>
+        <img src={pic} alt="" />
+      </div>
         {children}
     </div>
   )
