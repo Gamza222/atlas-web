@@ -7,6 +7,9 @@ import GraphStore from './bcomponets/UI/GraphSrore/GraphStore';
 import GraphTimeDb from './bcomponets/UI/GraphTimeDb/GraphTimeDb';
 import DonutChart from "react-donut-chart";
 import arrow from '../dashboardImages/arrow-blue.svg'
+import Chart from "react-google-charts";
+import InfoPic from '../dashboardImages/info-pic.svg'
+import { totalSubsidy } from './bcomponets/LayoutDashboard/LayoutDashboard'
 
 function calcWidth(num) {
   let newNum = num * 0.8;
@@ -692,77 +695,55 @@ const options1 = {
 };
 
 
+const donutChart = {
+  freight: 10,
+  suppliers: 15,
+  products: 15,
+  recycling: 10,
+  employees: 8,
+  inventory: 8,                       
+  energy: 20,     
+}
+
+const donutKeys = Object.keys(donutChart);
+const percent = donutKeys.reduce((item, curr) => {
+  return item + donutChart[curr]
+}, 0) / 100
+
 export default function Dashboard() {
   const [drop, setDrop] = useState(false);
   const [site, setSite] = useState('HTL'); //HTL == highest to lowest LTH == lowest to highest
   const [siteChoice,setSiteChoice] = useState(''); //seiteChoice - выбранный сайт в серчбоксе
 
+  function numToArr(name) {
+    let arr = (donutChart[name] / percent).toString().split('');
+    console.log(arr.indexOf['.'])
+    let b = "";
+    for (let a = 0; a < arr.indexOf('.'); a++) {
+      console.log(arr[a])
+      if(arr[a] == '.') {
+        b+=","
+      } else {
+        b+=arr[a];
+      }
+    }
+    return b
+  }
+  console.log(numToArr('freight'))
+
   return (
-    <LayoutDashboard name={'Your Dashboard'}>
+    <LayoutDashboard name={'Overview'}>
       <div className='db-container-content'>
         <div className='boxes-container'>
 
                 <BoxDb>
-                  <h3><span>Emissions</span> by category</h3>
-                  <div className='box-content' style={{overflow: 'hidden'}}>
-                    <p className='circle-chart-number'>
-                      {'4,000kg'}
-                    </p>
-                  <DonutChart
-                    className="dchart"
-                    width={500}
-                    toggledOffset={0}
-                    height={500}
-                    innerRadius={0.62}
-                    selectedOffset={0}
-                    strokeColor={"#fff"}
-                    outerRadius={0.5}
-                    colors={[
-                      "#192383",
-                      "#4C66C2",
-                      "#95DCAE",
-                      "#5CB67B",
-                      "#14873C",
-                      "#ECC528",
-                      "#F38448"
-                    ]}
-                      data={[
-                        {
-                          label: "Freight",
-                          value: 15
-                        },
-                        {
-                          label: "Inventory",
-                          value: 23
-                        },
-                        {
-                          label: "Recycling",
-                          value: 23
-                        },
-                        {
-                          label: "Energy",
-                          value: 10
-                        },
-                        {
-                          label: "Suppliers",
-                          value: 7
-                        },
-                        {
-                          label: "Employees",
-                          value: 7
-                        },
-                        {
-                          label: "Products",
-                          value: 23
-                        }
-                      ]}
-                    />
-                  </div>
-                </BoxDb>
-
-                <BoxDb>
-                  <h3><span>Emmisions</span> benchmark</h3>
+                  <h3>Your Carbon Score</h3>
                       <div className='box-content'>
+                        <div className="subsidy">
+                            <p>Total subsidy for reduction solutions: </p>
+                            <span>{`£${totalSubsidy}`}</span>
+                            <button className='buttonDb'><img src={InfoPic} alt="" /></button>
+                          </div>
                         <div className='main-emissions-circles'>
                             <div className='main-emissions-circles__item'>
                               <IECircle 
@@ -782,6 +763,129 @@ export default function Dashboard() {
                             </div>
                         </div>
                       </div>
+                </BoxDb>
+
+                <BoxDb>
+                  <h3><span>Emissions by </span>category</h3>
+                  <div className='box-content box-content2' style={{overflow: 'hidden'}}>
+                    <p className='circle-chart-number'>
+                      {'4,000kg'}
+                    </p>
+
+                    <Chart
+                      chartType="PieChart"
+                      width="420px"
+                      height="420px"
+                      data={
+                      [
+                        ["Sphere", "amount"],
+                        ["Freight", donutChart.freight],
+                        ["Suppliers", donutChart.suppliers],
+                        ["Products", donutChart.products],
+                        ["Recycling", donutChart.recycling],
+                        ["Employees", donutChart.employees],
+                        ["Inventory", donutChart.inventory],                       
+                        ["Energy", donutChart.energy],                       
+                      ]
+                      }
+                      options={
+                        {
+                        pieHole: 0.8,
+                        is3D: false,
+                        pieSliceText: "none",
+                        spreadSheetQueryParameters: { headers: 2, gid: 1, },
+                        slices: {
+                          0: { color: "#192383" },
+                          1: { color: "#4C66C2" },
+                          2: { color: "#95DCAE" },
+                          3: { color: "#5CB67B" },
+                          4: { color: "#14873C" },
+                          5: { color: "#ECC528" },
+                          6: { color: "#F38448" },
+                        },
+                       
+                        pieSliceText: "none",
+                        legend: "none",
+                      }
+                      }
+                    />
+
+                    <div className='donut-options'>
+
+                      <div className='donut-options__item'>
+                        <p className='donut-options__item__title' style={{'--circle-color': '#192383'}}>
+                          Freight
+                        </p>
+                        <p className='donut-options__item__text'>
+                          {
+                            `${numToArr('freight')}% - ${donutChart.freight}` 
+                          }
+                        </p>
+                      </div>
+                      
+                      <div className='donut-options__item'>
+                        <p className='donut-options__item__title' style={{'--circle-color': '#4C66C2'}}>
+                          Suppliers
+                        </p>
+                        <p className='donut-options__item__text'>
+                          {
+                            `${numToArr('suppliers')}% - ${donutChart.suppliers}` 
+                          }
+                        </p>
+                      </div>
+                      <div className='donut-options__item'>
+                        <p className='donut-options__item__title' style={{'--circle-color': '#95DCAE'}}>
+                          Products
+                        </p>
+                        <p className='donut-options__item__text'>
+                          {
+                            `${numToArr('products')}% - ${donutChart.products}` 
+                          }
+                        </p>
+                      </div>
+                      <div className='donut-options__item'>
+                        <p className='donut-options__item__title' style={{'--circle-color': '#5CB67B'}}>
+                          Recycling
+                        </p>
+                        <p className='donut-options__item__text'>
+                          {
+                            `${numToArr('recycling')}% - ${donutChart.recycling}` 
+                          }
+                        </p>
+                      </div>
+                      <div className='donut-options__item'>
+                        <p className='donut-options__item__title' style={{'--circle-color': '#14873C'}}>
+                          Employees
+                        </p>
+                        <p className='donut-options__item__text'>
+                          {
+                            `${numToArr('employees')}% - ${donutChart.employees}` 
+                          }
+                        </p>
+                      </div>
+                      <div className='donut-options__item'>
+                        <p className='donut-options__item__title' style={{'--circle-color': '#ECC528'}}>
+                          Inventory
+                        </p>
+                        <p className='donut-options__item__text'>
+                          {
+                            `${numToArr('inventory')}% - ${donutChart.inventory}` 
+                          }
+                        </p>
+                      </div>
+                      <div className='donut-options__item'>
+                        <p className='donut-options__item__title' style={{'--circle-color': '#F38448'}}>
+                          Energy
+                        </p>
+                        <p className='donut-options__item__text'>
+                          {
+                            `${numToArr('energy')}% - ${donutChart.energy}` //мало элементов поэтому просто складывае
+                          }
+                        </p>
+                      </div>
+
+                    </div>
+                  </div>
                 </BoxDb>
 
                 <BoxDb>
@@ -823,7 +927,7 @@ export default function Dashboard() {
 
                 <BoxDb>
                   <div className='over-time-header'>
-                      <h3><span>Suggested</span> solutions</h3>
+                      <h3>Emissions by <span>month</span></h3>
                       <button className='buttonDb'>Monthly<BsArrowRight/></button> 
                   </div>
                   <div className='box-content'>

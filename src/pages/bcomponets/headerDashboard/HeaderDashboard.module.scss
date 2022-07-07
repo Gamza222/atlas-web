@@ -239,41 +239,7 @@
                 }
 }
 
-.subsidy {
-    display: flex;
-    border: 2px solid #B9B9B9;
-    background-color: #fff;
-    border-radius: 5px;
-    align-items: center;
-    padding: 10px 20px;
-    align-self: flex-start;
-    @media screen and (max-width: 1150px) {
-        display: none;
-    }
 
-    > p {
-        margin-right: 15px;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
-        font-size: var(--small-font-size-dashboard);
-        line-height: 23px;
-        text-align: center;
-        color: $color-primary;
-    }
-
-    > span {
-        margin-right: 30px;
-        margin-right: 15px;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 700;
-        font-size: var(--small-font-size-dashboard);
-        line-height: 23px;
-        text-align: center;
-        color: $color-primary;
-    }
-}
 
 .header-subtitle {
 

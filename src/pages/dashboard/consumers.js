@@ -42,13 +42,8 @@ const [location, setLocation] = useState(0);
 console.log(consumersPic)
 
   return (
-    <LayoutDashboard name={'Consumers Dashboard'} pic={consumersPic}>
+    <LayoutDashboard name={'Consumers'} pic={consumersPic}>
         <div className='db-container-content'>
-            <div className='db-header'>
-                <img src={consumersPic} alt="consumersPic" />
-                <h1>Consumers</h1>
-                <img src={consumersPic} alt="consumersPic" />
-            </div>
             <div className='consumers-container'>
 
                 {/*Input form*/}

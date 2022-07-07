@@ -1,10 +1,15 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import HeaderDashboard from '../headerDashboard/HeaderDashboard'
 import './LayoutDashboard.scss'
+import Calendar from '../../../dashboardImages/Calendar.svg';
 
-
+export const totalSubsidy = 112;
+const calValues = [2021, 2022];
 
 export default function LayoutDashboard({children, name, pic}) {
+  const [calOpen, setCalOpen] = useState(false);
+  const [calValue, setCalValue] = useState(calValues[0])
+
   useEffect(() => {
     const slider = document.querySelectorAll('.box-content');
     console.log(slider)
@@ -38,10 +43,13 @@ slider.forEach(slider => {
     slider.addEventListener('mouseleave', stopDragging, false);
   })
 
-  slider[3].addEventListener("wheel", (evt) => {
-    evt.preventDefault();
-    slider[3].scrollLeft += evt.deltaY;
-});
+  if(slider[3]) {
+    slider[3].addEventListener("wheel", (evt) => {
+      evt.preventDefault();
+      slider[3].scrollLeft += evt.deltaY;
+  })
+  }
+
 
   });
 
@@ -52,8 +60,29 @@ slider.forEach(slider => {
     <div className='layout'>
       <HeaderDashboard name={name}/>
       <div className='header-subtitle'>
-        <h2>{name}</h2>
-        <img src={pic} alt="" />
+        <div>
+          <h2>{name}</h2>
+          {
+            pic ? <img src={pic} alt="" /> : ''
+          }
+        </div>
+        <button className='buttonDb' onClick={() => setCalOpen(!calOpen)}>
+          <div>
+            <img src={Calendar} alt="" />
+            <p>{`Jan 01, ${calValue} — Dec 31, ${calValue}`}</p>
+          </div>
+          {
+            calOpen ? 
+            <div>
+              {
+                calValues.map(value => {
+                  return <button className='buttonDb' onClick={() => setCalValue(value)}>{`Jan 01, ${value} — Dec 31, ${value}`}</button>
+                })
+              }
+            </div>
+            : ''
+          }
+        </button>
       </div>
         {children}
     </div>

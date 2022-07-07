@@ -18,6 +18,7 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        position: relative;
 
         &:hover {
             > p {
@@ -59,7 +60,7 @@
     letter-spacing: normal;
     position: absolute;
     left: 50%;
-    top: 0;
+    top: -1.3rem;
     transform: translate(-50%, -50%);
     font-family: 'Roboto';
     font-style: normal;

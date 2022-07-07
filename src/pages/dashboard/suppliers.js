@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import LayoutDashboard from '../bcomponets/LayoutDashboard/LayoutDashboard'
-import suppliersPic from '../../dashboardImages/suppliers-pic.svg'
+import suppliersPic from '../../dashboardImages/s-pic.svg'
 import BoxDb from '../bcomponets/UI/BoxDb/BoxDb'
 import IECircle from '../bcomponets/UI/IECircle/IECircle'
 import YECircle from '../bcomponets/UI/YECircle/YECircle'
@@ -10,6 +10,10 @@ import GraphSite from '../bcomponets/UI/GraphSite/GraphSite'
 import arrow from '../../dashboardImages/arrow-blue.svg'
 import {BsArrowRight} from 'react-icons/bs'
 import GraphTime from '../bcomponets/UI/GraphTime/GraphTime'
+import { totalSubsidy } from '../bcomponets/LayoutDashboard/LayoutDashboard'
+import shirtPic from '../../dashboardImages/recycling/shirt-pic.svg'
+import boxPic from '../../dashboardImages/recycling/box-pic.svg'
+import bagPic from '../../dashboardImages/recycling/bag-pic.svg'
 
 const graphOT = [
   {
@@ -117,12 +121,14 @@ const text = [
   {
     number: 2,
     name: "Textiles Recycling",
+    pic: shirtPic,
     buttons: [
       {
         span: "Change to",
-        button: "Octopus Energy",
+        button: "Octopus Energy:",
         num: 1,
-        description: 'Estimated Cost: £1,000 per annum',
+        description: 'monthly estimate',
+        span2: '£531,11',
         circles: {
           circle1: {
             number: 2000,
@@ -137,9 +143,10 @@ const text = [
       },
       {
         span: "Change to",
-        button: "Octopus Energy",
+        button: "Octopus Energy:",
         num: 2,
-        description: 'Estimated Cost: £1,000 per annum',
+        description: 'annual estimate',
+        span2: '£627.02' ,
         circles: {
           circle1: {
             number: 4000,
@@ -156,13 +163,15 @@ const text = [
   },
   {
     number: 3,
-    name: "Textiles Recycling",
+    name: "Cardboard Recycling",
+    pic: boxPic,
     buttons: [
       {
         span: "Change to",
-        button: "Octopus Energy",
+        button: "British Gas:",
         num: 3,
-        description: 'Estimated Cost: £1,000 per annum',
+        description: 'annual estimate',
+        span2: '£627.02' ,
         circles: {
           circle1: {
             width: 147,
@@ -177,9 +186,53 @@ const text = [
       },
       {
         span: "Change to",
-        button: "Octopus Energy",
+        button: "Octopus Energy:",
         num: 4,
-        description: 'Estimated Cost: £1,000 per annum',
+        description: 'monthly estimate',
+        span2: "£531,11",
+        circles: {
+          circle1: {
+            width: 127,
+            number: 500
+          },
+          circle2: {
+            width1: 137,
+            number: 500,
+            width2: '200px'
+          }
+        }
+      }
+    ],
+  },
+  {
+    number: 4,
+    name: "Plastic Bag Recycling",
+    pic: bagPic,
+    buttons: [
+      {
+        span: "Change to",
+        button: "Octopus Energy:",
+        num: 3,
+        description: 'monthly estimate',
+        span2: "£531,11",
+        circles: {
+          circle1: {
+            width: 147,
+            number: 500
+          },
+          circle2: {
+            width1: 137,
+            number: 500,
+            width2: 140
+          }
+        }
+      },
+      {
+        span: "Change to",
+        button: "Octopus Energy:",
+        num: 4,
+        description: 'monthly estimate',
+        span2: "£531,11",
         circles: {
           circle1: {
             width: 127,
@@ -205,46 +258,57 @@ export default function Suppliers() {
   console.log(siteChoice)
 
   return (
-    <LayoutDashboard name={'Suppliers Dashboard'}>
+    <LayoutDashboard name={'Suppliers'} pic={suppliersPic}>
         <div className='db-container-content'>
             <div className='db-header'>
-                <img src={suppliersPic} alt="" />
-                <h1>SUPPLIERS</h1>
-                <img src={suppliersPic} alt="" />
             </div>
             <div className='boxes-container'>
               <BoxDb>
-                <h3><span>Suggested</span> solutions</h3>
+                <h3>Suggested solutions</h3>
                 <div className='box-content'>
                     <div className="box-sollutions-content">
                         <div className="box-sollutions-content__text">
+
+                        <div className="subsidy">
+                            <p>Total subsidy for reduction solutions: </p>
+                            <span>{`£${totalSubsidy}`}</span>
+                            <button className='buttonDb'><img src={InfoPic} alt="" /></button>
+                          </div>
 
                           {/*butttons  and subcontent*/}
                           {
                             text.map(item => {
                             return (
                                       <div className='box-buttons'>
-
+                                        
                                         <button className={`buttonDb ${boxTextActive == item.number ? 'box-btn__active' : ''}`} 
                                                 onClick={() => {setboxTextActive(item.number); setCircle(item.buttons[0].num)}}>
                                           <div />
                                           {item.name}
+                                          <img src={item.pic} alt="" />
                                         </button>
+
+                                            <div>
                                             {
                                               item.buttons.map(button => {
                                               return (  
-                                                      <p style={{display: boxTextActive == item.number ? "block" : "none"}}>
-                                                        <div>
-                                                          <span>{button.span}</span>
-                                                          {/*butttons  that changes the circle*/}
-                                                          <button className='buttonDb' onClick={() => setCircle(button.num)}>{button.button}</button>
-                                                          {/*butttons  that changes the circle*/}
+                                                        <div style={{display: boxTextActive == item.number ? "flex" : "none"}}>
+                                                          <p>
+                                                            <div>
+                                                              <span>{button.span}</span>
+                                                              {/*butttons  that changes the circle*/}
+                                                              <button className='buttonDb' onClick={() => setCircle(button.num)}>{button.button}</button>
+                                                              {/*butttons  that changes the circle*/}
+                                                            </div>
+                                                            <span>{button.span2}</span>
+                                                            {button.description}
+                                                          </p>
+                                                          <button className='buttonDb'>Go to site</button>
                                                         </div>
-                                                        {button.description}
-                                                      </p>
                                                       )
                                               })
                                             }
+                                          </div>
                                         </div>
                                       )
                                     })
@@ -295,7 +359,7 @@ export default function Suppliers() {
                 </div>
               </BoxDb>
               <BoxDb>
-                <h3><span>Emissions</span> by site</h3>
+                <h3><span>Emissions</span> by store</h3>
                 <div className='box-content'>
                     <div className='box-ems-content'>
                       <div className='box-ems-content__graphs'>
@@ -327,7 +391,7 @@ export default function Suppliers() {
               </BoxDb>
               <BoxDb>
                 <div className='over-time-header'>
-                    <h3><span>Suggested</span> solutions</h3>
+                    <h3>Emissions by <span>month</span></h3>
                     <button className='buttonDb'>Monthly<BsArrowRight/></button> 
                 </div>
                 <div className='box-content last-box'>

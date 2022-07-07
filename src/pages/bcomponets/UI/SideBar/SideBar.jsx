@@ -55,6 +55,13 @@ export default function SideBar({activeMenu, setActiveMenu}) {
           <div className={`${classes.SideBar__item__content} ${active == 4 ? classes.isMenu : ''}`}>
           </div>
         </div>
+
+        <div className={classes.SideBar__copyright}>
+            <button className='buttonDb'>About</button>
+            <button className='buttonDb'>Privacy & Policy</button>
+            <button className='buttonDb'>Contact</button>
+            <p>© 2022 ATLAS. All Rights Reserved</p>
+        </div>
     </div>
   )
 }
