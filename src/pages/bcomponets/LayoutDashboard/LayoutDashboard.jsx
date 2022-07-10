@@ -6,7 +6,7 @@ import Calendar from '../../../dashboardImages/Calendar.svg';
 export const totalSubsidy = 112;
 const calValues = [2021, 2022];
 
-export default function LayoutDashboard({children, name, pic}) {
+export default function LayoutDashboard({children, name, pic, add}) {
   const [calOpen, setCalOpen] = useState(false);
   const [calValue, setCalValue] = useState(calValues[0])
 
@@ -59,6 +59,7 @@ slider.forEach(slider => {
   return (
     <div className='layout'>
       <HeaderDashboard name={name}/>
+      {add ? add : ''}
       <div className='header-subtitle'>
         <div>
           <h2>{name}</h2>
