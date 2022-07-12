@@ -1,0 +1,2 @@
+"use strict";(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([[3792],{7559:function(e,n,_){_.r(n),_.d(n,{default:function(){return t}});var r=_(7294);function t(e){var n=e.children;return r.createElement("div",{className:"box-container"},n)}}}]);
+//# sourceMappingURL=component---src-pages-bcomponets-ui-box-db-box-db-jsx-418a31780477122311f9.js.map

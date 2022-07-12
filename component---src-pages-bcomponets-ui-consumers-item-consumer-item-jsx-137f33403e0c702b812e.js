@@ -1,0 +1,2 @@
+"use strict";(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([[6602],{7736:function(e,r,t){t.r(r),t.d(r,{default:function(){return n}});var l=t(7294);function n(e){return console.log(e.OrderNo),l.createElement("div",{className:"ConsumerItem-module--ConsumerItem--L5tor"},e.OrderPlaced,l.createElement("p",null,e.OrderNo),l.createElement("p",null,e.StoreLocation),e.Customer,l.createElement("p",null,e.Value))}}}]);
+//# sourceMappingURL=component---src-pages-bcomponets-ui-consumers-item-consumer-item-jsx-137f33403e0c702b812e.js.map
