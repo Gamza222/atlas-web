@@ -4,6 +4,9 @@ import * as classes from './SideBar.module.scss'
 import menuPic from '../../../../dashboardImages/menu.svg'
 import energy from '../../../../dashboardImages/sidebar/e-pic.svg'
 import all from '../../../../dashboardImages/sidebar/all-pic.svg'
+import stock from '../../../../dashboardImages/sidebar/stock-pic.svg'
+import carbon from '../../../../dashboardImages/sidebar/carbon-pic.svg'
+import invoices from '../../../../dashboardImages/sidebar/invoices-pic.svg'
 import inventory from '../../../../dashboardImages/inventory.svg'
 import consumers from '../../../../dashboardImages/consumers.svg'
 import employee from '../../../../dashboardImages/employee.svg'
@@ -21,6 +24,7 @@ import arrow from '../../../../dashboardImages/sidebar/arrowdb.svg'
 export default function SideBar({activeMenu, setActiveMenu}) {
   console.log(activeMenu)
   const [active, setActive] = useState(0);
+  const [login, setLogin] = useState(false);
 
 
   return (
@@ -48,11 +52,14 @@ export default function SideBar({activeMenu, setActiveMenu}) {
         <div className={classes.SideBar__item}>
           <button className={`buttonDb ${active == 3 ? classes.buttonActive : ''}`} onClick={() => {setActive(active == 3 ? 0 : 3)}}><img src={offsetPic} alt="" />Offset Products <img src={arrow} alt="" /></button>
           <div className={`${classes.SideBar__item__content} ${active == 3 ? classes.isMenu : ''}`}>
+          <Link to={login ? "" : "/dashboard/carbonDbAll"}><img src={carbon} alt="carbon-pic" />Carbon Database</Link>
           </div>
         </div>
         <div className={classes.SideBar__item}>
           <button className={`buttonDb ${active == 4 ? classes.buttonActive : ''}`} onClick={() => {setActive(active == 4 ? 0 : 4)}}><img src={salesPic} alt="" />Sales Analytics <img src={arrow} alt="" /></button>
           <div className={`${classes.SideBar__item__content} ${active == 4 ? classes.isMenu : ''}`}>
+            <Link to="/dashboard/salesAnalytics"><img src={stock} alt="stock-pic" />Overview</Link>
+            <Link to="/dashboard/invoices"><img src={invoices} alt="invoices-pic" />Invoices</Link>
           </div>
         </div>
 

@@ -6,11 +6,14 @@ import Calendar from '../../../dashboardImages/Calendar.svg';
 export const totalSubsidy = 112;
 const calValues = [2021, 2022];
 
-export default function LayoutDashboard({children, name, pic, add}) {
+export default function LayoutDashboard({children, name, pic, add, headerDel}) {
   const [calOpen, setCalOpen] = useState(false);
   const [calValue, setCalValue] = useState(calValues[0])
 
   useEffect(() => {
+    if(typeof window == "undefined") {
+      return;
+    }
     const slider = document.querySelectorAll('.box-content');
     console.log(slider)
     let mouseDown = false;
@@ -60,6 +63,9 @@ slider.forEach(slider => {
     <div className='layout'>
       <HeaderDashboard name={name}/>
       {add ? add : ''}
+
+      {
+        headerDel ? "" :
       <div className='header-subtitle'>
         <div>
           <h2>{name}</h2>
@@ -85,6 +91,7 @@ slider.forEach(slider => {
           }
         </button>
       </div>
+      }
         {children}
     </div>
   )
