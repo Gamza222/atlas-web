@@ -1598,3 +1598,81 @@ svg {
         padding: 0 13px;
     }
 }
+
+.carbondb {
+    margin-left: 240px;
+    padding: 0 80px 0 52px;
+    margin-top: 52px;
+
+    &__filter {
+        background: #FFFFFF;
+        border-radius: 8px;
+        width: 280px;
+        padding: 27px 20px 27px 27px;
+
+        &__line {
+            width: 100%;
+            border: 0.5px solid #B9B9B9;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+            padding: 0 2px;
+            gap: 30px;
+
+            &__item {
+            display: flex;
+            align-items: center;
+                > div {
+                    display: flex;
+                    align-items: center;
+                    height: 17px;
+                    width: 17px;
+                    border: 2px solid #000A68;
+                    border-radius: 2px;
+
+                    > svg {
+                        color: #000A68;
+                    }
+                }
+
+                > p {
+                    font-family: "Lato";
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 120%;
+                    letter-spacing: 0.005em;
+                    color: #000A68;
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        > button {
+            > p {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 22px;
+                line-height: 120%;
+                letter-spacing: normal;
+                color: #000A68;
+            }
+
+            > svg {
+                color: #5E5E6D;
+                margin-left: 27px;
+                margin-top: 6px;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    @media screen and (max-width: 1150px) {
+        margin-left: 0;
+        padding: 0 13px;
+    }
+}

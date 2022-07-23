@@ -22,6 +22,7 @@
     "apexcharts": "^3.35.3",
     "chart.js": "^3.8.0",
     "gatsby": "^4.19.0",
+    "gatsby-cli": "^4.19.0",
     "gatsby-plugin-loadable-components-ssr": "^4.2.0",
     "gatsby-plugin-sass": "^5.13.0",
     "next": "^12.2.2",

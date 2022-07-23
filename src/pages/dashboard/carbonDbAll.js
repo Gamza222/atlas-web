@@ -42,7 +42,7 @@ export default function CarbonDbAll() {
           </div>
             {
               product.name !== undefined ?
-              <CheckoutNL name={product.name} beforeNum={product.beforeNum} afterNum={product.afterNum} />
+              <CheckoutNL name={product.name} beforeNum={product.beforeNum} afterNum={product.afterNum} price={200.00} setProduct={setProduct} product={product} />
               : ""
             }
         </div>
