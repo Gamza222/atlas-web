@@ -1600,19 +1600,32 @@ svg {
 }
 
 .carbondb {
+    position: relative;
     margin-left: 240px;
     padding: 0 80px 0 52px;
     margin-top: 52px;
+    display: flex;
+
+    &__boxes {
+        margin-left: 32px;
+    }
 
     &__filter {
         background: #FFFFFF;
         border-radius: 8px;
         width: 280px;
         padding: 27px 20px 27px 27px;
+        height: fit-content;
+
+        @media screen and (max-width: 1150px) {
+            width: 100%;
+        }
 
         &__line {
             width: 100%;
-            border: 0.5px solid #B9B9B9;
+            height: 0.5px;
+            background: #B9B9B9;
+            margin: 21px 0;
         }
 
         &__list {
@@ -1652,6 +1665,7 @@ svg {
         }
 
         > button {
+            width: 100%;
             > p {
                 font-family: 'Lato';
                 font-style: normal;
@@ -1660,6 +1674,8 @@ svg {
                 line-height: 120%;
                 letter-spacing: normal;
                 color: #000A68;
+                width: 100%;
+                text-align: start;
             }
 
             > svg {
@@ -1674,5 +1690,261 @@ svg {
     @media screen and (max-width: 1150px) {
         margin-left: 0;
         padding: 0 13px;
+        flex-direction: column;
     }
+}
+
+.carbodb__boxes {
+    margin-left: 50px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 100px;
+    row-gap: 30px;
+
+    @media screen and (max-width: 1900px) {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 90px;
+        row-gap: 30px;
+    }
+    @media screen and (max-width: 1600px) {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 70px;
+        row-gap: 20px;
+    }
+    @media screen and (max-width: 1470px) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 120px;
+        row-gap: 20px;
+    }
+    @media screen and (max-width: 1350px) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 70px;
+        row-gap: 20px;
+    }
+    @media screen and (max-width: 1250px) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 140px;
+        row-gap: 20px;
+    }
+    @media screen and (max-width: 1150px) {
+        align-items: center;
+        justify-items: center;
+        margin-top: 30px;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 70px;
+        margin-left: 0;
+    }
+    @media screen and (max-width: 950px) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 70px;
+    }
+    @media screen and (max-width: 750px) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 70px;
+    }
+    @media screen and (max-width: 450px) {
+        grid-template-columns: 1fr;
+        column-gap: 70px;
+    }
+}
+
+.carbondb__productBox {
+    position: fixed;
+    padding: 22px 19px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    top: 284px;
+    width: 614px;
+    height: 495px; 
+    right: 200px;
+
+    @media screen and (max-width: 1150px) {
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 50%;
+    } 
+
+    > h5 {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        letter-spacing: normal;
+        color: #000A68;
+    }
+
+    &__description {
+        display: flex;
+        margin-top: 11px;
+
+        &__image {
+            width: 172px;
+            height: 137px;
+            border: 1px solid #B9B9B9;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            > p {
+                font-family: 'Raleway';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+                display: flex;
+                align-items: center;
+                color: #B9B9B9;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        &__descr {
+            display: flex;
+            flex-direction: column;
+            margin-left: 19px;
+
+            > p:nth-child(2) {
+                margin-top: 10px;
+            }
+
+            > p {
+                margin-top: 16px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+                display: flex;
+                align-items: center;
+                letter-spacing: normal;
+                padding: 5px;
+                color: #000A68;
+            }
+
+            &__discount {
+                font-family: 'Raleway' !important;
+                font-style: italic !important;
+                font-weight: 300 !important;
+                font-size: 16px !important;
+                line-height: 19px !important;
+                margin-top: 4px !important;
+                display: flex !important;
+                align-items: center !important;
+                letter-spacing: normal !important;
+                padding: 3px 12px 3px 8px !important;
+                border: 1px solid #000A68 !important;
+                color: #000A68 !important;
+                border-radius: 10px !important;
+            }
+
+        }
+
+        &__total {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 23px;
+            line-height: 28px;
+            display: flex;
+            align-items: center;
+            letter-spacing: normal;
+            color: #000A68;
+            width: 133px;
+            height: 100px;
+            background: rgba(76, 102, 194, 0.09);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 12px 24px;
+            gap: 14px;
+            margin-left: 39px;
+
+            > span {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 25px;
+                line-height: 30px;
+                display: flex;
+                align-items: center;
+                color: #000A68;
+                letter-spacing: normal;
+            }
+        }
+    }
+
+    > p {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        margin-top: 27px;
+        color: #000A68;
+        letter-spacing: normal;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        column-gap: 90px;
+        row-gap: 20px;
+        justify-content: center;
+        margin-top: 5px;
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            width: 132px;
+            height: 100px;
+            background: rgba(76, 102, 194, 0.09);
+            border-radius: 20px;
+            align-items: center;
+            padding: 6px;
+
+            > p:nth-child(2) {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 23px;
+                line-height: 28px;
+                display: flex;
+                align-items: center;
+                letter-spacing: normal;
+                color: #000A68;
+            }
+
+            > p:nth-child(3) {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: normal;
+
+                display: flex;
+                align-items: center;
+
+                color: #000A68;
+            }
+        }
+    }
+}
+
+.carbondbproductBoxbutton {
+    position: absolute;
+    color: #000A68;
+    top: 10px;
+    right: 25px;
+
 }

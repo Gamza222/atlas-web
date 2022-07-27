@@ -8,7 +8,7 @@ import {AiOutlineClose} from 'react-icons/ai'
 export default function CheckoutNL({price, name, beforeNum, afterNum, line, setProduct, product}) {
 
   return (
-    <div className={classes.container} style={{display: product.name == undefined ? "none" : "flex"}}>
+    <div className={classes.container} style={{display: product.name ? "none" : "flex"}}>
       <button onClick={() => setProduct('')} className='buttonDb'><AiOutlineClose /></button>
       <h3><span>Sector:</span>{name}</h3>
       <p>Your Impact:</p>
