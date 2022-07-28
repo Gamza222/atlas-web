@@ -3,7 +3,7 @@ import * as classes from './BoxDbLog.module.scss'
 
 export default function BoxDbLog({pic, name, num, sold, returnNum, price, prevPrice, setProduct, materials, manufacturing, distribution, use, recycling, maxDiscount, total}) {
   return (
-    <button className={`${classes.container} buttonDb`} onClick={() => setProduct(
+    <button className={`buttonDb containerCarbonAll ${classes.container}`} onClick={() => setProduct(
         {
             name: name,
             price: price,
@@ -17,23 +17,23 @@ export default function BoxDbLog({pic, name, num, sold, returnNum, price, prevPr
             total: total
         }
     )}>
-        <div className={classes.container__img}>
+        <div className={`${classes.container__img} containerCarbonAll__img`}>
             {pic ? <img src={pic} alt="" /> : <div />}
         </div>
         <h3>{name}</h3>
-        <div className={classes.container__description}>
-            <div className={classes.container__description__num}>
+        <div className={`${classes.container__description} containerCarbonAll__description`}>
+            <div className={`${classes.container__description__num}`}>
                 <div />
                 {
                     num ? <p>{num.split('').slice(0, num.indexOf('.'))}<span>{num.split('').slice(num.indexOf('.'))}</span></p> : ''
                 }
             </div>
-            <div className={classes.container__description__sold}>
+            <div className={`${classes.container__description__sold} containerCarbonAll__description__sold`}>
                 <p>{`> ${sold} Sold`}</p>
             </div>
         </div>
-        <p className={classes.container__returnNum}>CO2 Return: {returnNum}</p>
-        <div className={classes.container__price}>
+        <p className={`${classes.container__returnNum} containerCarbonAll__returnNum`}>CO2 Return: {returnNum}</p>
+        <div className={`${classes.container__price} containerCarbonAll__price`}>
             <p>${price}</p>
             <p>${prevPrice}</p>
         </div>
