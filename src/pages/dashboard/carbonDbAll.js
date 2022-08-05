@@ -5,11 +5,13 @@ import carbonSearch from '../../dashboardImages/carbonDbNL/carbonSearch.svg'
 import { CgSearch } from 'react-icons/cg'
 import ProductNotLog from '../bcomponets/UI/productNotLog/productNotLog'
 import CheckoutNL from '../bcomponets/UI/CheckoutNL/CheckoutNL'
+import ProductLog from '../bcomponets/UI/ProductLog/ProductLog'
 
 export default function CarbonDbAll() {
   const [focus, setFocus] = useState(false);
   const [search, setSearch] = useState("Search for a sector");
   const [product, setProduct] = useState({});
+  const [discountW, setDiscountW] = useState(false);
   console.log(product)
   return (
     <LayoutDashboard 
@@ -40,10 +42,15 @@ export default function CarbonDbAll() {
               <ProductNotLog name={'Pubs & Bars'} text={"Some explaning text here, about the sector"} color={"#FFEDD9"} setProduct={setProduct} beforeNum={"1000"} afterNum={"500"}/>
               <ProductNotLog name={'Mix of Sectors'} text={"Some explaning text here, about the sector"} color={"#E5FFD9"} setProduct={setProduct} beforeNum={"1000"} afterNum={"500"}/>
           </div>
+          
             {
               product.name !== undefined ?
               <CheckoutNL name={product.name} beforeNum={product.beforeNum} afterNum={product.afterNum} price={200.00} setProduct={setProduct} product={product} style={{display: product.name ? "none" : "flex"}}/>
               : ""
+            }
+            {
+              discountW ? <ProductLog /> 
+              : ''
             }
         </div>
     </LayoutDashboard>

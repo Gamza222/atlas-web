@@ -1,0 +1,48 @@
+@import '../../../assets/mixins';
+
+.container {
+    width: 202px;
+    height: 310px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 19px 13px 5px;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0px 0px 28px 6px rgba(120, 120, 120, 0.2);
+    }
+
+    &__image {
+        background: #95DCAE;
+        border-radius: 4px;
+        width: 171px;
+        height: 147px;
+    }
+
+    > h4 {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        color: #1E3354;
+        letter-spacing: normal;
+        margin-top: 16px;
+    }
+
+    > p {
+        letter-spacing: normal;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        color: #868686;
+        margin-top: 11px;
+    }
+}

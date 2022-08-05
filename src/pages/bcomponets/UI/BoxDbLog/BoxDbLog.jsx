@@ -1,9 +1,9 @@
 import React from 'react'
 import * as classes from './BoxDbLog.module.scss'
 
-export default function BoxDbLog({pic, name, num, sold, returnNum, price, prevPrice, setProduct, materials, manufacturing, distribution, use, recycling, maxDiscount, total}) {
+export default function BoxDbLog({pic,setProdWin, name, num, sold,setDiscountW, returnNum, price, prevPrice, setProduct, materials, manufacturing, distribution, use, recycling, maxDiscount, total}) {
   return (
-    <button className={`buttonDb containerCarbonAll ${classes.container}`} onClick={() => setProduct(
+    <button className={`buttonDb containerCarbonAll ${classes.container}`} onClick={() => {setProduct(
         {
             name: name,
             price: price,
@@ -16,7 +16,7 @@ export default function BoxDbLog({pic, name, num, sold, returnNum, price, prevPr
             maxDiscount: maxDiscount,
             total: total
         }
-    )}>
+    ); setProdWin(true)}}>
         <div className={`${classes.container__img} containerCarbonAll__img`}>
             {pic ? <img src={pic} alt="" /> : <div />}
         </div>
@@ -37,7 +37,21 @@ export default function BoxDbLog({pic, name, num, sold, returnNum, price, prevPr
             <p>${price}</p>
             <p>${prevPrice}</p>
         </div>
-        <button className='buttonDb'>
+        <button style={{zIndex: "20"}} className='buttonDb' 
+        onClick={() => setProduct(
+            {
+                name: name,
+                price: price,
+                materials: materials,
+                manufacturing: manufacturing,
+                distribution: distribution,
+                use: use,
+                recycling: recycling,
+                returnNum: returnNum,
+                maxDiscount: maxDiscount,
+                total: total
+            }
+        )} setDiscountW={true}>
             Edit %
         </button>
     </button>
