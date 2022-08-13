@@ -1,16 +1,19 @@
 import React from 'react'
 import * as classes from './BoxDbLog.module.scss'
 
-export default function BoxDbLog({pic,setProdWin, name, num, sold,setDiscountW, returnNum, price, prevPrice, setProduct, materials, manufacturing, distribution, use, recycling, maxDiscount, total}) {
+export default function BoxDbLog({beforeNum,afterNum, pic,setProdWin, name, num, sold,setDiscountW, returnNum, price, prevPrice, setProduct, materials, manufacturing, distribution, use, recycling, maxDiscount, total}) {
   return (
     <button className={`buttonDb containerCarbonAll ${classes.container}`} onClick={() => {setProduct(
         {
             name: name,
             price: price,
+            prevPrice: prevPrice,
             materials: materials,
             manufacturing: manufacturing,
             distribution: distribution,
             use: use,
+            beforeNum: beforeNum,
+            afterNum: afterNum,
             recycling: recycling,
             returnNum: returnNum,
             maxDiscount: maxDiscount,
@@ -34,11 +37,12 @@ export default function BoxDbLog({pic,setProdWin, name, num, sold,setDiscountW, 
         </div>
         <p className={`${classes.container__returnNum} containerCarbonAll__returnNum`}>CO2 Return: {returnNum}</p>
         <div className={`${classes.container__price} containerCarbonAll__price`}>
-            <p>${price}</p>
+            <p>${Math.round(prevPrice - (prevPrice / 100 * maxDiscount))}</p>
             <p>${prevPrice}</p>
         </div>
-        <button style={{zIndex: "20"}} className='buttonDb' 
-        onClick={() => setProduct(
+        <button  className='buttonDb' 
+        onClick={() => {
+            setProduct(
             {
                 name: name,
                 price: price,
@@ -51,7 +55,9 @@ export default function BoxDbLog({pic,setProdWin, name, num, sold,setDiscountW, 
                 maxDiscount: maxDiscount,
                 total: total
             }
-        )} setDiscountW={true}>
+        );
+        setDiscountW(true)
+        }}>
             Edit %
         </button>
     </button>

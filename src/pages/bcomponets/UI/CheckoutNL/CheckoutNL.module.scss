@@ -119,6 +119,7 @@
             width: 64px;
             margin: 0 18px;
             height: 242px;
+            margin-top: 20px;
 
             @media screen and (max-width: 900px) {
                 display: none;
@@ -132,6 +133,8 @@
             
             > div:nth-child(2) {
                 height: 210px;
+                display: flex;
+                align-items: center;
             }
 
             > p:nth-child(1) {
