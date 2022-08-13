@@ -11,6 +11,15 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    font-size: var(--small-font-size-dashboard);
+    white-space: nowrap;
+    color: #fff;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    font-family: $main-font-variant;
 
     &:hover {
         background-color: #FFFFFF;

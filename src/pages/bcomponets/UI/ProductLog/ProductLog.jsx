@@ -16,7 +16,7 @@ export default function ProductLog({prevPrice, name, beforeNum, maxDiscount, aft
       <div className={classes.container__edDisc}>
         <p>Edit Discount</p>
         <div>
-            <input style={{width: discount.length + "ch"}} type="text" value={discount} onChange={(e) => setDiscount(e.target.value)} />
+            <input style={discount && discount.length !== 0 ? {width: discount.length + "ch"} : {}} type="text" value={discount} onChange={(e) => setDiscount(e.target.value)} />
             
             <span>%</span>
         </div>
