@@ -6,7 +6,7 @@ import Calendar from '../../../dashboardImages/Calendar.svg';
 export const totalSubsidy = 112;
 const calValues = [2021, 2022];
 
-export default function LayoutDashboard({children, name, pic, add, headerDel}) {
+export default function LayoutDashboard({children, name, pic, add, headerDel, download}) {
   const [calOpen, setCalOpen] = useState(false);
   const [calValue, setCalValue] = useState(calValues[0])
 
@@ -73,23 +73,26 @@ slider.forEach(slider => {
             pic ? <img src={pic} alt="" /> : ''
           }
         </div>
-        <button className='buttonDb' onClick={() => setCalOpen(!calOpen)}>
-          <div>
-            <img src={Calendar} alt="" />
-            <p>{`Jan 01, ${calValue} — Dec 31, ${calValue}`}</p>
-          </div>
-          {
-            calOpen ? 
+        <div className='header-calendar'>
+          {download ? <button className='buttonDb'><img src="" alt="" /></button> : ""}
+          <button className='buttonDb' onClick={() => setCalOpen(!calOpen)}>
             <div>
-              {
-                calValues.map(value => {
-                  return <button className='buttonDb' onClick={() => setCalValue(value)}>{`Jan 01, ${value} — Dec 31, ${value}`}</button>
-                })
-              }
+              <img src={Calendar} alt="" />
+              <p>{`Jan 01, ${calValue} — Dec 31, ${calValue}`}</p>
             </div>
-            : ''
-          }
-        </button>
+            {
+              calOpen ? 
+              <div>
+                {
+                  calValues.map(value => {
+                    return <button className='buttonDb' onClick={() => setCalValue(value)}>{`Jan 01, ${value} — Dec 31, ${value}`}</button>
+                  })
+                }
+              </div>
+              : ''
+            }
+          </button>
+        </div>
       </div>
       }
         {children}

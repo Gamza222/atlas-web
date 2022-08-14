@@ -1,7 +1,7 @@
 import React from 'react'
 import * as classes from './BoxDbLog.module.scss'
 
-export default function BoxDbLog({beforeNum,product, afterNum, pic,setProdWin, name, num, sold,setDiscountW, returnNum, price, prevPrice, setProduct, materials, manufacturing, distribution, use, recycling, maxDiscount, total}) {
+export default function BoxDbLogin({beforeNum,product, afterNum, pic,setProdWin, name, num, sold,setDiscountW, returnNum, price, prevPrice, setProduct, materials, manufacturing, distribution, use, recycling, maxDiscount, total}) {
   return (
     <button className={classes.container} onClick={() => {setProduct(
         {
